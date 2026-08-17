@@ -468,6 +468,22 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 @media (min-width:901px){
   .hero-photo{animation:blobMorph 16s ease-in-out infinite;}
 }
+
+/* ---- Histoire d'Irina ---- */
+.transfo{display:grid; gap:.7rem; max-width:560px; margin:2.4rem auto 0;}
+.transfo-row{
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1rem;
+  background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius-m); padding:.9rem 1.3rem;
+}
+.transfo-row .t-before{text-align:right; color:var(--ink-faint); font-size:.92rem; text-decoration:line-through; text-decoration-color:var(--blush-line);}
+.transfo-row .t-arrow{color:var(--wine); font-weight:700;}
+.transfo-row .t-after{text-align:left; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:1.05rem;}
+.credibility{max-width:660px; margin:2.4rem auto 0; font-size:.82rem; color:var(--ink-faint); line-height:1.75;}
+@media (max-width:520px){
+  .transfo-row{grid-template-columns:1fr; text-align:center; gap:.15rem; padding:.9rem 1rem;}
+  .transfo-row .t-before,.transfo-row .t-after{text-align:center;}
+  .transfo-row .t-arrow{display:none;}
+}
 </style>
 </head>
 <body>
@@ -571,7 +587,8 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
     <div class="mech-grid">
       <div class="reveal">
         <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);">Ta tête a compris. Ça ne veut pas dire que <span class="a-alt">le programme a changé.</span></h2>
-        <p class="measure" style="margin-top:1.4rem; color:var(--ink-soft);">Ce que tu vis a un nom&nbsp;: <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--wine);">l'écart entre l'intention et l'action</em>, documenté par des chercheurs en psychologie. Ton cerveau peut comprendre exactement ce qu'il faut faire, sans jamais le transformer en geste, parce que la décision ne se joue pas là où tu crois.</p>
+        <p class="measure" style="margin-top:1.4rem; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem;">95&nbsp;% de tes actions quotidiennes sont pilotées par ton subconscient. Tu essaies de changer ta vie avec les 5&nbsp;% restants.</p>
+        <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ce que tu vis a un nom&nbsp;: <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--wine);">l'écart entre l'intention et l'action</em>, documenté par des chercheurs en psychologie. Ton cerveau peut comprendre exactement ce qu'il faut faire, sans jamais le transformer en geste, parce que la décision ne se joue pas là où tu crois.</p>
         <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ta volonté a fait ce qu'elle pouvait. Le programme n'a simplement jamais changé.</p>
         <ul class="pillar-list">
           <li><b>Ton système nerveux</b>, qui décide en une fraction de seconde si tu es en sécurité ou en alerte.</li>
@@ -612,15 +629,16 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 
 <section class="band-cream">
   <div class="wrap" style="text-align:center;">
-    <span class="eyebrow reveal" style="justify-content:center;">Avant de créer Recode</span>
+    <span class="eyebrow reveal" style="justify-content:center;">Qui est Irina</span>
     <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Avant d'être celle qui accompagne, elle a été celle qui cherchait.</h2>
-    <div class="compare reveal d1">
-      <div class="compare-side before"><span class="tag">Avant</span><span class="mono">I.S.</span></div>
-      <div class="compare-side after"><span class="tag">Après</span><span class="mono">I.S.</span></div>
-      <div class="compare-handle" style="left:50%;"></div>
-      <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+    <p class="measure reveal d1" style="margin:1.6rem auto 0; color:var(--ink-soft);">Sur le papier, Irina cochait toutes les cases&nbsp;: un diplôme de droit, un CDI en banque d'investissement, un appartement acheté à 23&nbsp;ans. À l'intérieur, elle fonctionnait comme sa pire ennemie — burn-out, rupture, licenciement, et cette sensation d'être à moitié présente dans sa propre vie.</p>
+    <p class="measure reveal d1" style="margin:1rem auto 0; color:var(--ink-soft);">Le jour où elle a cessé de lutter <em>contre</em> elle-même pour avancer <em>avec</em> elle, tout a changé. Elle s'est formée aux neurosciences — neuro-thérapeute certifiée — et à l'EFT, puis a construit la méthode qu'elle aurait voulu recevoir&nbsp;: <strong style="color:var(--wine); font-weight:600;">Recode</strong>.</p>
+    <div class="transfo reveal d2">
+      <div class="transfo-row"><span class="t-before">Une femme en colère</span><span class="t-arrow">→</span><span class="t-after">une femme sereine</span></div>
+      <div class="transfo-row"><span class="t-before">Qui court après les autres</span><span class="t-arrow">→</span><span class="t-after">qui connaît sa valeur</span></div>
+      <div class="transfo-row"><span class="t-before">Sans hobby ni passion</span><span class="t-arrow">→</span><span class="t-after">qui sait ce qu'elle veut</span></div>
     </div>
-    <p class="irina-quote reveal d2">Elle est passée par les mêmes boucles — comprendre sans transformer, se remotiver puis abandonner — avant de construire la méthode Recode.</p>
+    <p class="credibility reveal d3">Coach spécialisée en neurosciences &amp; Self&nbsp;Therapy · +200&nbsp;femmes accompagnées · <strong style="color:var(--ink-soft); font-weight:600;">@irina.smb</strong>, 50K&nbsp;abonnés · podcast <em>Self Care Talk</em> · conférences DIANE, Decathlon &amp; collaboration Dove.</p>
   </div>
 </section>
 
@@ -632,8 +650,8 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
     </div>
     <div class="module-grid reveal d2">
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module R — Reconnaître">
-        <div class="m-body"><span class="m-title">R — Reconnaître</span><span class="m-desc">Tu apprends à repérer ce qui se passe dans ton corps avant même que ta tête n'intervienne. Cohérence cardiaque, EFT guidé, sortie du pilote automatique.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module R — Réguler">
+        <div class="m-body"><span class="m-title">R — Réguler</span><span class="m-desc">Tu apaises ton système nerveux saturé et tu sors du mode survie. Auto-diagnostic de départ, compréhension des 4F, cohérence cardiaque et EFT guidé.</span></div>
       </div>
       <div class="module-card">
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf384c4da1.09241667_2.png" alt="Module E — Explorer">
@@ -671,7 +689,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
     <div class="pricing reveal d3">
       <div class="price-main">
         <span class="price-value">497€</span>
-        <span class="price-old">1590€</span>
+        <span class="price-old">2248€</span>
       </div>
       <div class="price-plans">Paiement en 1x, 4x ou 6x sans frais.</div>
     </div>
@@ -726,7 +744,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-cream">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Garantie transformation, 6 mois</span>
-    <p class="reveal measure" style="margin:0 auto; color:var(--ink-soft);">Si tu ne constates aucune amélioration après 6 mois, <strong style="color:var(--wine); font-weight:600;">tu es remboursée intégralement</strong>. La seule condition&nbsp;: avoir suivi au moins 12h de coaching et pratiqué les routines 5 fois par semaine. On ne te demande pas de croire, on te demande d'essayer, pour de vrai.</p>
+    <p class="reveal measure" style="margin:0 auto; color:var(--ink-soft);">Si après 6 mois tu ne constates aucune amélioration, <strong style="color:var(--wine); font-weight:600;">tu es remboursée intégralement</strong>. La seule condition&nbsp;: avoir suivi tes 12h de lives, visionné tous les modules et fait les exercices. Un simple email suffit — sans question, sans justification. On ne te demande pas de croire, on te demande d'essayer, pour de vrai.</p>
   </div>
 </section>
 
