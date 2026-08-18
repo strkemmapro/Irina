@@ -18,6 +18,8 @@
   --wine:#5C0008;
   --wine-bright:#7A0D14;
   --wine-ink:#2A0407;
+  --accent:#A85A61;          /* variante bordeaux — accent mots-clés (clair) */
+  --accent-soft:#C98A8F;     /* variante bordeaux — sur fond sombre */
   --paper:#EDECE9;
   --paper-soft:#F8F8F8;
   --blush:#DDDBD8;
@@ -504,6 +506,61 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .tmoin p{margin:0; color:var(--ink); font-size:1rem; line-height:1.72;}
 .tmoin p em{color:var(--wine); font-style:italic; font-weight:500;}
 .tmoin .t-author{margin-top:.4rem; font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase;}
+
+/* ============ Variation typo + accent bordeaux sur mots-clés ============ */
+.k-accent{color:var(--accent);}
+.k-serif{font-family:'Playfair Display',serif; font-style:italic; font-weight:600;}
+.k-sans{font-family:'Poppins',sans-serif; font-weight:600; font-style:normal; letter-spacing:-.01em;}
+.band-dark .k-accent{color:var(--accent-soft);}
+
+/* ---- séparateur ornemental ---- */
+.divider-mark{display:flex; align-items:center; justify-content:center; gap:.9rem; margin:0 auto clamp(1.4rem,3.5vw,2.2rem); color:var(--accent); max-width:340px;}
+.band-dark .divider-mark{color:var(--accent-soft);}
+.divider-mark::before,.divider-mark::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,transparent,currentColor);}
+.divider-mark::after{background:linear-gradient(270deg,transparent,currentColor);}
+.divider-mark i{width:6px; height:6px; border-radius:50%; background:currentColor; box-shadow:0 0 0 4px color-mix(in srgb,currentColor 20%, transparent); flex:0 0 auto;}
+
+/* ---- relief boutons ---- */
+.btn-primary{box-shadow:0 14px 26px -14px rgba(92,0,8,.55), inset 0 1px 0 rgba(255,255,255,.14); position:relative; overflow:hidden;}
+.btn-primary::after{content:""; position:absolute; top:0; left:-130%; width:55%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.30),transparent); transform:skewX(-18deg);}
+.btn-primary:hover{box-shadow:0 20px 34px -14px rgba(92,0,8,.62), inset 0 1px 0 rgba(255,255,255,.18);}
+.btn-primary:hover::after{animation:btnShine .9s cubic-bezier(.16,1,.3,1);}
+@keyframes btnShine{from{left:-130%;} to{left:150%;}}
+@media (prefers-reduced-motion: reduce){.btn-primary::after{display:none;}}
+
+/* ---- CTA récurrent inline ---- */
+.cta-inline{display:flex; flex-direction:column; align-items:center; gap:.9rem; margin-top:clamp(2.4rem,5vw,3.4rem); text-align:center;}
+.cta-inline .cta-kicker{font-size:.9rem; color:var(--ink-soft); font-family:'Playfair Display',serif; font-style:italic;}
+.band-dark .cta-inline .cta-kicker{color:rgba(236,231,226,.72);}
+
+/* ---- Ce n'est pas / C'est ---- */
+.notis-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2.8rem;}
+@media (max-width:760px){.notis-grid{grid-template-columns:1fr;}}
+.notis-col{border-radius:var(--radius-m); padding:2.2rem; transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s;}
+.notis-col h3{font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; margin-bottom:1.3rem;}
+.notis-col ul{margin:0; padding:0; list-style:none; display:grid; gap:1rem;}
+.notis-col li{position:relative; padding-left:1.7em; font-size:.96rem; line-height:1.6;}
+.notis-col.is-not{background:var(--paper-soft); border:1px solid var(--blush-line);}
+.notis-col.is-not h3{color:var(--ink-soft);}
+.notis-col.is-not li{color:var(--ink-soft);}
+.notis-col.is-not li::before{content:"✕"; position:absolute; left:0; color:var(--ink-faint); font-weight:600;}
+.notis-col.is-is{background:var(--wine-ink); border:1px solid var(--wine); box-shadow:0 24px 44px -26px rgba(92,0,8,.3);}
+.notis-col.is-is:hover{transform:translateY(-5px); box-shadow:0 34px 56px -26px rgba(92,0,8,.38);}
+.notis-col.is-is h3{color:#F6F1EC;}
+.notis-col.is-is li{color:rgba(236,231,226,.84);}
+.notis-col.is-is li::before{content:"✓"; position:absolute; left:0; color:var(--accent-soft); font-weight:700;}
+.notis-col.is-is li b{color:#F6F1EC; font-weight:600;}
+
+/* ---- Value stack (détail de l'offre) ---- */
+.stack{max-width:660px; margin:2.6rem auto 0; display:grid; gap:.7rem;}
+.stack-row{display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:1.2rem; padding:1.05rem 1.4rem; background:rgba(236,231,226,.05); border:1px solid rgba(236,231,226,.14); border-radius:var(--radius-m); text-align:left; transition:border-color .35s, background .35s;}
+.stack-row:hover{border-color:rgba(236,231,226,.28); background:rgba(236,231,226,.08);}
+.stack-row .s-label{color:rgba(236,231,226,.82); font-size:.95rem; line-height:1.5;}
+.stack-row .s-label b{color:#F6F1EC; font-weight:600; font-family:'Playfair Display',serif; font-style:italic; font-size:1.02rem;}
+.stack-row .s-val{color:var(--accent-soft); font-family:'Poppins',sans-serif; font-weight:600; font-size:.9rem; white-space:nowrap; letter-spacing:.02em;}
+.stack-total{display:flex; align-items:baseline; justify-content:center; gap:.7rem; margin-top:1.4rem; flex-wrap:wrap;}
+.stack-total .st-label{font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(236,231,226,.58);}
+.stack-total .st-val{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; color:rgba(236,231,226,.5); text-decoration:line-through; text-decoration-color:rgba(236,231,226,.4); font-size:1.5rem;}
 </style>
 </head>
 <body>
@@ -521,7 +578,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
       <span class="tr-sep">:</span>
       <div class="tr-block"><span class="tr-num" id="tr-s">00</span><span class="tr-unit">secondes</span></div>
     </div>
-    <a href="#cta" id="timer-cta-recode">J'en profite</a>
+    <a href="#offre" id="timer-cta-recode">J'en profite</a>
   </div>
   <header class="nav">
     <div class="nav-inner">
@@ -529,7 +586,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
         <span class="rc-name">RECODE</span>
         <span class="rc-tag">the self therapy method.</span>
       </a>
-      <a class="nav-cta" href="#cta">Découvrir Recode</a>
+      <a class="nav-cta" href="#offre">Rejoindre Recode</a>
     </div>
   </header>
 </div>
@@ -548,7 +605,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
       <div class="reveal in">
         <p class="sub">Recode agit à 3 niveaux que la motivation ne touche jamais&nbsp;: ton système nerveux, ton subconscient, et tes circuits de récompense.</p>
         <div class="hero-ctas">
-          <a class="btn-primary" href="#cta">Je découvre Recode</a>
+          <a class="btn-primary" href="#offre">Je découvre Recode</a>
         </div>
       </div>
       <div class="hero-photo reveal in d1">
@@ -622,13 +679,45 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
         <div class="caption"><span>Avant Recode — signal erratique</span><span>Après Recode — signal stable</span></div>
       </div>
     </div>
+    <div class="cta-inline reveal d2">
+      <span class="cta-kicker">Si tu veux enfin travailler au bon niveau&nbsp;:</span>
+      <a class="btn-primary" href="#offre">Je découvre la méthode Recode</a>
+    </div>
+  </div>
+</section>
+
+<section class="band-soft">
+  <div class="wrap" style="text-align:center;">
+    <div class="divider-mark reveal"><i></i></div>
+    <span class="eyebrow reveal" style="justify-content:center;">Pour être claire</span>
+    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Ce que Recode n'est pas, et ce que c'est <span class="k-sans k-accent">vraiment.</span></h2>
+    <div class="notis-grid reveal d1">
+      <div class="notis-col is-not">
+        <h3>Ce n'est pas</h3>
+        <ul>
+          <li>Une méthode de plus à comprendre par la tête</li>
+          <li>Un défi de motivation ou de discipline forcée</li>
+          <li>De la pensée positive qui reste en surface</li>
+          <li>Une énième thérapie par la parole</li>
+        </ul>
+      </div>
+      <div class="notis-col is-is">
+        <h3>C'est</h3>
+        <ul>
+          <li>Un travail sur <b>ton corps et ton système nerveux</b> — EFT, cohérence cardiaque</li>
+          <li>Une reprogrammation de <b>ton subconscient</b> et de tes circuits de récompense</li>
+          <li>Un protocole <b>progressif, ancré dans le corps</b>, pas dans la volonté</li>
+          <li>Un accompagnement sur 6&nbsp;mois, à ton rythme, avec la communauté</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="band-blush">
   <div class="wrap">
     <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="32" x2="42" y2="32"/><path d="M12,32 A12,12 0 0 1 36,32"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="11" y1="10" x2="15" y2="15"/><line x1="37" y1="10" x2="33" y2="15"/></svg>Et ça finit par se voir</span>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Le changement ne reste pas dans ta tête. Il se voit, concrètement.</h2>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Le changement ne reste pas dans ta tête. Il se voit, <span class="k-sans k-accent">concrètement.</span></h2>
     <div class="change-grid">
       <div class="change-cell reveal">
         <svg class="picto" viewBox="0 0 48 48" fill="none" stroke="var(--wine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="24" y1="38" x2="24" y2="44"/><line x1="4" y1="24" x2="10" y2="24"/><line x1="38" y1="24" x2="44" y2="24"/><line x1="10" y1="10" x2="14" y2="14"/><line x1="34" y1="34" x2="38" y2="38"/><line x1="10" y1="38" x2="14" y2="34"/><line x1="34" y1="14" x2="38" y2="10"/></svg>
@@ -659,12 +748,17 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
       <div class="transfo-row"><span class="t-before">Sans hobby ni passion</span><span class="t-arrow">→</span><span class="t-after">qui sait ce qu'elle veut</span></div>
     </div>
     <p class="credibility reveal d3">Coach spécialisée en neurosciences &amp; Self&nbsp;Therapy · +200&nbsp;femmes accompagnées · <strong style="color:var(--ink-soft); font-weight:600;">@irina.smb</strong>, 50K&nbsp;abonnés · podcast <em>Self Care Talk</em> · conférences DIANE, Decathlon &amp; collaboration Dove.</p>
+    <div class="cta-inline reveal d3">
+      <span class="cta-kicker">La méthode qu'elle a construite pour elle, elle l'a rendue accessible.</span>
+      <a class="btn-primary" href="#offre">Je rejoins Recode</a>
+    </div>
   </div>
 </section>
 
-<section class="band-dark">
+<section class="band-dark" id="offre">
   <div class="wrap">
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Ce que tu reçois, concrètement.</h2>
+    <div class="divider-mark reveal"><i></i></div>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Ce que tu reçois, <span class="k-sans k-accent">concrètement.</span></h2>
     <div class="offer-banner reveal d1">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d9173644dc68.14047889_Designsanstitre19.png" alt="Aperçu du programme Recode : vidéos, ebooks, lives, communauté">
     </div>
@@ -706,12 +800,25 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ebfe8ed46.74067367_50ideesactivitesafaireseule.png" alt="50 activités solo"><span class="b-name">50 activités solo</span></div>
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e435e9bc8.18260651_hormonesdubonheur.png" alt="Hormones du bonheur"><span class="b-name">Hormones du bonheur</span></div>
     </div>
+    <div class="stack reveal d3">
+      <div class="stack-row"><span class="s-label"><b>Le programme complet R.E.C.O.D.E.</b> — les 6 modules, accès à vie</span><span class="s-val">valeur 1&nbsp;099€</span></div>
+      <div class="stack-row"><span class="s-label"><b>12&nbsp;h de lives de groupe</b> sur 6&nbsp;mois + communauté WhatsApp à vie</span><span class="s-val">valeur 399€</span></div>
+      <div class="stack-row"><span class="s-label"><b>Auto-diagnostic</b> + questionnaires de suivi à 1, 3 et 6&nbsp;mois</span><span class="s-val">inclus</span></div>
+      <div class="stack-row"><span class="s-label"><b>Les 9 bonus offerts</b> — journaling, capsules EFT, tracker, Face Yoga…</span><span class="s-val">valeur 750€</span></div>
+    </div>
+    <div class="stack-total reveal d3">
+      <span class="st-label">Valeur totale</span>
+      <span class="st-val">2&nbsp;248€</span>
+    </div>
     <div class="pricing reveal d3">
       <div class="price-main">
         <span class="price-value">497€</span>
-        <span class="price-old">2248€</span>
+        <span class="price-old">au lieu de 2&nbsp;248€</span>
       </div>
-      <div class="price-plans">Paiement en 1x, 4x ou 6x sans frais.</div>
+      <div class="price-plans">Paiement en 1x, 4x ou 6x sans frais · accès immédiat &amp; à vie.</div>
+      <div class="hero-ctas" style="justify-content:center; margin-top:1.8rem;">
+        <a class="btn-primary" href="#">Je rejoins Recode maintenant</a>
+      </div>
     </div>
     <p class="disclaimer reveal d3">Recode demande <strong style="color:rgba(246,241,236,.85); font-weight:600;">un vrai investissement de ta part</strong>, ce n'est pas une baguette magique. C'est pour ça que la garantie ci-dessous est conditionnée à un minimum de pratique, pas juste au temps qui passe.</p>
   </div>
@@ -787,11 +894,11 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-blush">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Elles ont franchi le pas</span>
-    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Des centaines de femmes ont déjà cessé de subir leur vie.</h2>
+    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Des centaines de femmes ont déjà cessé de <span class="k-sans k-accent">subir</span> leur vie.</h2>
     <div class="proof-stats reveal d1">
-      <div class="proof-stat"><span class="ps-num">200+</span><span class="ps-label">femmes accompagnées</span></div>
-      <div class="proof-stat"><span class="ps-num">50K</span><span class="ps-label">abonnés @irina.smb</span></div>
-      <div class="proof-stat"><span class="ps-num">60K+</span><span class="ps-label">écoutes du podcast</span></div>
+      <div class="proof-stat"><span class="ps-num" data-count="200" data-suffix="+">0</span><span class="ps-label">femmes accompagnées</span></div>
+      <div class="proof-stat"><span class="ps-num" data-count="50" data-suffix="K">0</span><span class="ps-label">abonnés @irina.smb</span></div>
+      <div class="proof-stat"><span class="ps-num" data-count="60" data-suffix="K+">0</span><span class="ps-label">écoutes du podcast</span></div>
     </div>
     <p class="measure reveal d2" style="margin:2.2rem auto 0; color:var(--ink-soft);">Des femmes en burn-out, en reconversion, en rupture. Des femmes qui rejouaient les mêmes schémas, qui manquaient de confiance, mentalement surchargées. Elles avaient un point commun&nbsp;: elles ne voulaient plus seulement <em>comprendre</em> — elles voulaient enfin se <em>transformer</em>.</p>
     <div class="tmoins reveal d3">
@@ -812,11 +919,12 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark cta-final" id="cta">
   <div class="wrap">
     <span class="eyebrow reveal" style="justify-content:center;">Recode</span>
-    <h2 class="reveal">Tu sais déjà ce que tu devrais faire. La question n'a jamais été là.</h2>
+    <h2 class="reveal">Tu sais déjà ce que tu devrais faire. La question n'a <span class="k-sans k-accent">jamais</span> été là.</h2>
     <p class="sub reveal d1">Recode reprogramme ton système nerveux, ton subconscient et tes circuits de récompense, pour devenir enfin la femme que tu admires.</p>
     <div class="hero-ctas reveal d2">
-      <a class="btn-primary" href="#">Je commence Recode</a>
+      <a class="btn-primary" href="#offre">Je commence Recode</a>
     </div>
+    <p class="reveal d3" style="margin:1.4rem auto 0; font-size:.82rem; color:rgba(236,231,226,.6);">Garantie 6 mois · paiement en 4x sans frais · accès à vie</p>
   </div>
 </section>
 
@@ -861,6 +969,29 @@ const io = new IntersectionObserver((entries)=>{
   });
 },{threshold:.15});
 els.forEach(el=>io.observe(el));
+
+// KPI count-up au scroll
+(function(){
+  const nums = document.querySelectorAll('.ps-num[data-count]');
+  if(!nums.length) return;
+  function run(el){
+    const target = parseInt(el.getAttribute('data-count'),10) || 0;
+    const suffix = el.getAttribute('data-suffix') || '';
+    if(REDUCED){ el.textContent = target + suffix; return; }
+    const dur = 1400, start = performance.now();
+    function step(now){
+      const p = Math.min(1,(now-start)/dur);
+      const eased = 1 - Math.pow(1-p,3);
+      el.textContent = Math.round(target*eased) + suffix;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const cio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ run(e.target); cio.unobserve(e.target); } });
+  },{threshold:.4});
+  nums.forEach(n=>cio.observe(n));
+})();
 
 // compare slider
 const range = document.querySelector('.compare-range');
