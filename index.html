@@ -561,6 +561,61 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .stack-total{display:flex; align-items:baseline; justify-content:center; gap:.7rem; margin-top:1.4rem; flex-wrap:wrap;}
 .stack-total .st-label{font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(236,231,226,.58);}
 .stack-total .st-val{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; color:rgba(236,231,226,.5); text-decoration:line-through; text-decoration-color:rgba(236,231,226,.4); font-size:1.5rem;}
+
+/* ============ v2 — plus d'animation & de rythme ============ */
+/* reveal plus marqué (translation + léger zoom) */
+.reveal{transform:translateY(32px) scale(.98);}
+.reveal.in{transform:translateY(0) scale(1);}
+
+/* titres de section : trait d'accent qui se dessine sous le h2 au reveal */
+h2.ttl{position:relative; padding-bottom:.5em;}
+h2.ttl::after{content:""; position:absolute; left:0; bottom:0; height:3px; width:clamp(46px,7vw,66px); border-radius:2px;
+  background:linear-gradient(90deg,var(--accent),transparent); transform:scaleX(0); transform-origin:left;
+  transition:transform .8s .15s cubic-bezier(.16,1,.3,1);}
+.band-dark h2.ttl::after{background:linear-gradient(90deg,var(--accent-soft),transparent);}
+[style*="text-align:center"] h2.ttl::after, .cta-final h2.ttl::after{left:50%; margin-left:calc(clamp(46px,7vw,66px) / -2);}
+h2.ttl.reveal.in::after, .reveal.in h2.ttl::after{transform:scaleX(1);}
+@media (prefers-reduced-motion: reduce){h2.ttl::after{transition:none !important; transform:scaleX(1) !important;}}
+
+/* badges de module R.E.C.O.D.E. */
+.module-card{position:relative;}
+.module-card .m-badge{position:absolute; top:.7rem; left:1rem; z-index:2; display:flex; align-items:baseline; gap:.5rem; pointer-events:none;}
+.module-card .m-badge b{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:2.7rem; line-height:.75; color:#F8F3EF; text-shadow:0 6px 22px rgba(0,0,0,.65);}
+.module-card .m-badge span{font-family:'Poppins',sans-serif; font-weight:600; font-size:.66rem; letter-spacing:.22em; color:var(--accent-soft); text-shadow:0 2px 8px rgba(0,0,0,.7);}
+
+/* stagger — les enfants des grilles entrent en cascade */
+.module-grid > .reveal:nth-child(1){transition-delay:.04s}
+.module-grid > .reveal:nth-child(2){transition-delay:.12s}
+.module-grid > .reveal:nth-child(3){transition-delay:.20s}
+.module-grid > .reveal:nth-child(4){transition-delay:.28s}
+.module-grid > .reveal:nth-child(5){transition-delay:.36s}
+.module-grid > .reveal:nth-child(6){transition-delay:.44s}
+.bonus-grid > .reveal:nth-child(1){transition-delay:.03s}
+.bonus-grid > .reveal:nth-child(2){transition-delay:.09s}
+.bonus-grid > .reveal:nth-child(3){transition-delay:.15s}
+.bonus-grid > .reveal:nth-child(4){transition-delay:.21s}
+.bonus-grid > .reveal:nth-child(5){transition-delay:.27s}
+.bonus-grid > .reveal:nth-child(6){transition-delay:.33s}
+.bonus-grid > .reveal:nth-child(7){transition-delay:.39s}
+.bonus-grid > .reveal:nth-child(8){transition-delay:.45s}
+.bonus-grid > .reveal:nth-child(9){transition-delay:.51s}
+.stack > .reveal:nth-child(1){transition-delay:.05s}
+.stack > .reveal:nth-child(2){transition-delay:.13s}
+.stack > .reveal:nth-child(3){transition-delay:.21s}
+.stack > .reveal:nth-child(4){transition-delay:.29s}
+
+/* bande de crédibilité défilante */
+.marquee{margin-top:2.8rem; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);}
+.marquee-track{display:flex; gap:2.8rem; width:max-content; animation:marquee 26s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-item{display:inline-flex; align-items:center; gap:.7rem; font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; color:var(--ink-soft); white-space:nowrap;}
+.marquee-item::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--accent);}
+.band-blush .marquee-item{color:var(--wine-ink);}
+@keyframes marquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none; transform:none;}}
+
+/* parallaxe légère de la photo hero */
+.hero-photo img{will-change:transform;}
 </style>
 </head>
 <body>
@@ -631,7 +686,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark">
   <div class="wrap">
     <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24,24 a2,2 0 0 1 2,-2 a4,4 0 0 1 4,4 a6,6 0 0 1 -6,6 a8,8 0 0 1 -8,-8 a10,10 0 0 1 10,-10 a12,12 0 0 1 12,12"/></svg>Tu as fait ce qu'on t'a dit de faire</span>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Tu as fait les choses dans l'ordre. Ce n'est pas ça, le problème.</h2>
+    <h2 class="reveal ttl" style="font-size:clamp(1.6rem,3vw,2.3rem);">Tu as fait les choses dans l'ordre. Ce n'est pas ça, le problème.</h2>
     <div class="path-list">
       <div class="path-item reveal">
         <div class="label">Comprendre</div>
@@ -663,7 +718,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
     <span class="eyebrow no-line reveal">Ce qui se joue en dessous</span>
     <div class="mech-grid">
       <div class="reveal">
-        <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);">Ta tête a compris. Ça ne veut pas dire que <span class="a-alt">le programme a changé.</span></h2>
+        <h2 class="ttl" style="font-size:clamp(1.7rem,3.4vw,2.5rem);">Ta tête a compris. Ça ne veut pas dire que <span class="a-alt">le programme a changé.</span></h2>
         <p class="measure" style="margin-top:1.4rem; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem;">95&nbsp;% de tes actions quotidiennes sont pilotées par ton subconscient. Tu essaies de changer ta vie avec les 5&nbsp;% restants.</p>
         <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ce que tu vis a un nom&nbsp;: <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--wine);">l'écart entre l'intention et l'action</em>, documenté par des chercheurs en psychologie. Ton cerveau peut comprendre exactement ce qu'il faut faire, sans jamais le transformer en geste, parce que la décision ne se joue pas là où tu crois.</p>
         <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ta volonté a fait ce qu'elle pouvait. Le programme n'a simplement jamais changé.</p>
@@ -690,7 +745,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
   <div class="wrap" style="text-align:center;">
     <div class="divider-mark reveal"><i></i></div>
     <span class="eyebrow reveal" style="justify-content:center;">Pour être claire</span>
-    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Ce que Recode n'est pas, et ce que c'est <span class="k-sans k-accent">vraiment.</span></h2>
+    <h2 class="reveal ttl" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Ce que Recode n'est pas, et ce que c'est <span class="k-sans k-accent">vraiment.</span></h2>
     <div class="notis-grid reveal d1">
       <div class="notis-col is-not">
         <h3>Ce n'est pas</h3>
@@ -717,7 +772,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-blush">
   <div class="wrap">
     <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="32" x2="42" y2="32"/><path d="M12,32 A12,12 0 0 1 36,32"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="11" y1="10" x2="15" y2="15"/><line x1="37" y1="10" x2="33" y2="15"/></svg>Et ça finit par se voir</span>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Le changement ne reste pas dans ta tête. Il se voit, <span class="k-sans k-accent">concrètement.</span></h2>
+    <h2 class="reveal ttl" style="font-size:clamp(1.6rem,3vw,2.3rem);">Le changement ne reste pas dans ta tête. Il se voit, <span class="k-sans k-accent">concrètement.</span></h2>
     <div class="change-grid">
       <div class="change-cell reveal">
         <svg class="picto" viewBox="0 0 48 48" fill="none" stroke="var(--wine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="24" y1="38" x2="24" y2="44"/><line x1="4" y1="24" x2="10" y2="24"/><line x1="38" y1="24" x2="44" y2="24"/><line x1="10" y1="10" x2="14" y2="14"/><line x1="34" y1="34" x2="38" y2="38"/><line x1="10" y1="38" x2="14" y2="34"/><line x1="34" y1="14" x2="38" y2="10"/></svg>
@@ -739,7 +794,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-cream">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Qui est Irina</span>
-    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Avant d'être celle qui accompagne, elle a été celle qui cherchait.</h2>
+    <h2 class="reveal ttl" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Avant d'être celle qui accompagne, elle a été celle qui cherchait.</h2>
     <p class="measure reveal d1" style="margin:1.6rem auto 0; color:var(--ink-soft);">Sur le papier, Irina cochait toutes les cases&nbsp;: un diplôme de droit, un CDI en banque d'investissement, un appartement acheté à 23&nbsp;ans. À l'intérieur, elle fonctionnait comme sa pire ennemie — burn-out, rupture, licenciement, et cette sensation d'être à moitié présente dans sa propre vie.</p>
     <p class="measure reveal d1" style="margin:1rem auto 0; color:var(--ink-soft);">Le jour où elle a cessé de lutter <em>contre</em> elle-même pour avancer <em>avec</em> elle, tout a changé. Elle s'est formée aux neurosciences — neuro-thérapeute certifiée — et à l'EFT, puis a construit la méthode qu'elle aurait voulu recevoir&nbsp;: <strong style="color:var(--wine); font-weight:600;">Recode</strong>.</p>
     <div class="transfo reveal d2">
@@ -758,47 +813,53 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark" id="offre">
   <div class="wrap">
     <div class="divider-mark reveal"><i></i></div>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Ce que tu reçois, <span class="k-sans k-accent">concrètement.</span></h2>
+    <h2 class="reveal ttl" style="font-size:clamp(1.6rem,3vw,2.3rem);">Ce que tu reçois, <span class="k-sans k-accent">concrètement.</span></h2>
     <div class="offer-banner reveal d1">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d9173644dc68.14047889_Designsanstitre19.png" alt="Aperçu du programme Recode : vidéos, ebooks, lives, communauté">
     </div>
-    <div class="module-grid reveal d2">
-      <div class="module-card">
+    <div class="module-grid">
+      <div class="module-card reveal">
+        <span class="m-badge"><b>R</b><span>01</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module R — Réguler">
         <div class="m-body"><span class="m-title">R — Réguler</span><span class="m-desc">Tu apaises ton système nerveux saturé et tu sors du mode survie. Auto-diagnostic de départ, compréhension des 4F, cohérence cardiaque et EFT guidé.</span></div>
       </div>
-      <div class="module-card">
+      <div class="module-card reveal">
+        <span class="m-badge"><b>E</b><span>02</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf384c4da1.09241667_2.png" alt="Module E — Explorer">
         <div class="m-body"><span class="m-title">E — Explorer</span><span class="m-desc">Tu remontes aux schémas qui se répètent, dans ton couple, ton travail, l'image que tu as de toi. Une cartographie de ce qui tourne en boucle.</span></div>
       </div>
-      <div class="module-card">
+      <div class="module-card reveal">
+        <span class="m-badge"><b>C</b><span>03</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf5636c9c5.37809630_3.png" alt="Module C — Connecter">
         <div class="m-body"><span class="m-title">C — Connecter</span><span class="m-desc">Tu relies enfin ce que tu ressens à ce que vit ton corps, avec la méthode ARC. Ce qui se jouait en silence devient concret.</span></div>
       </div>
-      <div class="module-card">
+      <div class="module-card reveal">
+        <span class="m-badge"><b>O</b><span>04</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf69165596.56922299_4.png" alt="Module O — Ouvrir">
         <div class="m-body"><span class="m-title">O — Ouvrir</span><span class="m-desc">Tu identifies les croyances qui filtrent tout ce que tu vois de toi, et tu les reprogrammes à la racine.</span></div>
       </div>
-      <div class="module-card">
+      <div class="module-card reveal">
+        <span class="m-badge"><b>D</b><span>05</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf77ef1257.43605979_5.png" alt="Module D — Décider">
         <div class="m-body"><span class="m-title">D — Décider</span><span class="m-desc">Tu sors de la discipline forcée. Un système personnel de constance remplace la boucle motivation puis abandon.</span></div>
       </div>
-      <div class="module-card">
+      <div class="module-card reveal">
+        <span class="m-badge"><b>É</b><span>06</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module É — Évoluer">
         <div class="m-body"><span class="m-title">É — Évoluer</span><span class="m-desc">Une estime de toi qui ne dépend plus de ce que tu montres, mais de ce que tu incarnes. Elle reste, même les jours difficiles.</span></div>
       </div>
     </div>
     <p class="bonus-heading reveal d3"><span class="n">9</span> Bonus offerts</p>
-    <div class="bonus-grid reveal d3">
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91f01726030.22488605_regudurgence.png" alt="Kit de régulation d'urgence"><span class="b-name">Régulation d'urgence</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91db7e90cc2.37973302_30prompts.png" alt="Journaling, 30 prompts"><span class="b-name">Journaling, 30 prompts</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91fbfba8ec1.13759170_trackerdhabitudes.png" alt="Tracker d'habitudes"><span class="b-name">Tracker d'habitudes</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91d8a972ce1.95994664_cyclefeminin.png" alt="Cycle féminin et énergie"><span class="b-name">Cycle féminin</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e1aee55a2.69120277_bookclub.png" alt="Book club"><span class="b-name">Book club</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ee0924c60.48251465_rituelsdelune.png" alt="Rituels lunaires"><span class="b-name">Rituels lunaires</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e27084e23.58118462_ikigai.png" alt="Guide Ikigaï"><span class="b-name">Guide Ikigaï</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ebfe8ed46.74067367_50ideesactivitesafaireseule.png" alt="50 activités solo"><span class="b-name">50 activités solo</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e435e9bc8.18260651_hormonesdubonheur.png" alt="Hormones du bonheur"><span class="b-name">Hormones du bonheur</span></div>
+    <div class="bonus-grid">
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91f01726030.22488605_regudurgence.png" alt="Kit de régulation d'urgence"><span class="b-name">Régulation d'urgence</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91db7e90cc2.37973302_30prompts.png" alt="Journaling, 30 prompts"><span class="b-name">Journaling, 30 prompts</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91fbfba8ec1.13759170_trackerdhabitudes.png" alt="Tracker d'habitudes"><span class="b-name">Tracker d'habitudes</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91d8a972ce1.95994664_cyclefeminin.png" alt="Cycle féminin et énergie"><span class="b-name">Cycle féminin</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e1aee55a2.69120277_bookclub.png" alt="Book club"><span class="b-name">Book club</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ee0924c60.48251465_rituelsdelune.png" alt="Rituels lunaires"><span class="b-name">Rituels lunaires</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e27084e23.58118462_ikigai.png" alt="Guide Ikigaï"><span class="b-name">Guide Ikigaï</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ebfe8ed46.74067367_50ideesactivitesafaireseule.png" alt="50 activités solo"><span class="b-name">50 activités solo</span></div>
+      <div class="bonus-item reveal"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e435e9bc8.18260651_hormonesdubonheur.png" alt="Hormones du bonheur"><span class="b-name">Hormones du bonheur</span></div>
     </div>
     <div class="stack reveal d3">
       <div class="stack-row"><span class="s-label"><b>Le programme complet R.E.C.O.D.E.</b> — les 6 modules, accès à vie</span><span class="s-val">valeur 1&nbsp;099€</span></div>
@@ -827,7 +888,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-cream">
   <div class="wrap">
     <span class="eyebrow reveal">Est-ce que c'est pour toi</span>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Recode n'est pas pour tout le monde.</h2>
+    <h2 class="reveal ttl" style="font-size:clamp(1.6rem,3vw,2.3rem);">Recode n'est pas pour tout le monde.</h2>
     <div class="fit-grid reveal d1">
       <div class="fit-col yes">
         <h3>C'est pour toi si</h3>
@@ -894,11 +955,29 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-blush">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Elles ont franchi le pas</span>
-    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Des centaines de femmes ont déjà cessé de <span class="k-sans k-accent">subir</span> leur vie.</h2>
+    <h2 class="reveal ttl" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Des centaines de femmes ont déjà cessé de <span class="k-sans k-accent">subir</span> leur vie.</h2>
     <div class="proof-stats reveal d1">
       <div class="proof-stat"><span class="ps-num" data-count="200" data-suffix="+">0</span><span class="ps-label">femmes accompagnées</span></div>
       <div class="proof-stat"><span class="ps-num" data-count="50" data-suffix="K">0</span><span class="ps-label">abonnés @irina.smb</span></div>
       <div class="proof-stat"><span class="ps-num" data-count="60" data-suffix="K+">0</span><span class="ps-label">écoutes du podcast</span></div>
+    </div>
+    <div class="marquee reveal d1" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Collaboration Dove</span>
+        <span class="marquee-item">Conférences Decathlon</span>
+        <span class="marquee-item">Réseau DIANE</span>
+        <span class="marquee-item">YoGyFace</span>
+        <span class="marquee-item">Marque ANA-KE</span>
+        <span class="marquee-item">Podcast Self Care Talk</span>
+        <span class="marquee-item">Events Liège &amp; Paris</span>
+        <span class="marquee-item">Collaboration Dove</span>
+        <span class="marquee-item">Conférences Decathlon</span>
+        <span class="marquee-item">Réseau DIANE</span>
+        <span class="marquee-item">YoGyFace</span>
+        <span class="marquee-item">Marque ANA-KE</span>
+        <span class="marquee-item">Podcast Self Care Talk</span>
+        <span class="marquee-item">Events Liège &amp; Paris</span>
+      </div>
     </div>
     <p class="measure reveal d2" style="margin:2.2rem auto 0; color:var(--ink-soft);">Des femmes en burn-out, en reconversion, en rupture. Des femmes qui rejouaient les mêmes schémas, qui manquaient de confiance, mentalement surchargées. Elles avaient un point commun&nbsp;: elles ne voulaient plus seulement <em>comprendre</em> — elles voulaient enfin se <em>transformer</em>.</p>
     <div class="tmoins reveal d3">
@@ -919,7 +998,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark cta-final" id="cta">
   <div class="wrap">
     <span class="eyebrow reveal" style="justify-content:center;">Recode</span>
-    <h2 class="reveal">Tu sais déjà ce que tu devrais faire. La question n'a <span class="k-sans k-accent">jamais</span> été là.</h2>
+    <h2 class="reveal ttl">Tu sais déjà ce que tu devrais faire. La question n'a <span class="k-sans k-accent">jamais</span> été là.</h2>
     <p class="sub reveal d1">Recode reprogramme ton système nerveux, ton subconscient et tes circuits de récompense, pour devenir enfin la femme que tu admires.</p>
     <div class="hero-ctas reveal d2">
       <a class="btn-primary" href="#offre">Je commence Recode</a>
@@ -991,6 +1070,20 @@ els.forEach(el=>io.observe(el));
     entries.forEach(e=>{ if(e.isIntersecting){ run(e.target); cio.unobserve(e.target); } });
   },{threshold:.4});
   nums.forEach(n=>cio.observe(n));
+})();
+
+// parallaxe légère de la photo hero
+(function(){
+  const img = document.querySelector('.hero-photo img');
+  if(!img || REDUCED) return;
+  let ticking = false;
+  function update(){
+    const y = window.scrollY;
+    if(y < window.innerHeight){ img.style.transform = 'translateY(' + (y * 0.08) + 'px) scale(1.04)'; }
+    ticking = false;
+  }
+  window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
+  update();
 })();
 
 // compare slider
