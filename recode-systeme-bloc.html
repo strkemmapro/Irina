@@ -1,17 +1,17 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 /* ============================================================
-   RECODE — brand palette
+   RECODE  brand palette
    #EDECE9  paper     #F8F8F8  soft/white
    #DDDBD8  grey       #5C0008  wine        #000000  black
-   Typographie : Playfair Display (titres) · Poppins (corps)
+   Typographie : Playfair Display (titres)  Poppins (corps)
    ============================================================ */
 :root{
   --wine:#5C0008;
   --wine-bright:#7A0D14;
   --wine-ink:#2A0407;
-  --accent:#A85A61;          /* variante bordeaux — accent mots-clés (clair) */
-  --accent-soft:#C98A8F;     /* variante bordeaux — sur fond sombre */
+  --accent:#A85A61;          /* variante bordeaux  accent mots-cles (clair) */
+  --accent-soft:#C98A8F;     /* variante bordeaux  sur fond sombre */
   --paper:#EDECE9;
   --paper-soft:#F8F8F8;
   --blush:#DDDBD8;
@@ -122,7 +122,7 @@ header.nav{
   border-bottom:1px solid var(--line);
 }
 
-/* ---- Barre compte à rebours ---- */
+/* ---- Barre compte a rebours ---- */
 #timer-bar-recode{
   background:var(--wine); color:#EDECE9;
   padding:11px 20px; text-align:center;
@@ -179,7 +179,7 @@ header.nav{
 .hero-emotional{font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:clamp(1.1rem,1.9vw,1.4rem); color:var(--wine); margin-top:1.2rem; margin-bottom:0;}
 .hero-ctas{display:flex; gap:16px; align-items:center; margin-top:2.4rem; flex-wrap:wrap;}
 
-/* Variation typographique du titre : base sombre, mots-clés en relief */
+/* Variation typographique du titre : base sombre, mots-cles en relief */
 #heroH1{color:var(--ink);}
 #heroH1 .a-em{font-style:italic; color:var(--wine);}
 #heroH1 .a-sans{
@@ -187,7 +187,7 @@ header.nav{
   letter-spacing:-.01em; text-decoration:line-through; text-decoration-thickness:2px;
   text-decoration-color:rgba(92,0,8,.5);
 }
-/* accent réutilisable dans les titres de section clairs */
+/* accent reutilisable dans les titres de section clairs */
 .a-alt{font-family:'Poppins',sans-serif; font-weight:600; font-style:normal; color:var(--ink);}
 
 /* hero load sequence */
@@ -246,7 +246,7 @@ header.nav{
 .mirror-line:last-of-type{grid-column:1 / -1; font-size:clamp(1.25rem,2.2vw,1.6rem); text-align:center; background:var(--paper); border-color:var(--blush-line);}
 .mirror-line .accent{color:var(--wine); font-style:normal; font-weight:700;}
 
-/* faux pistes — frise verticale */
+/* faux pistes  frise verticale */
 .path-list{position:relative; margin-top:3rem;}
 .path-list::before{
   content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px;
@@ -292,7 +292,7 @@ header.nav{
 .mech-visual{background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius-m); padding:2rem;}
 .pillar-list{list-style:none; margin:1.4rem 0 0; padding:0; display:grid; gap:.8rem; max-width:var(--measure);}
 .pillar-list li{padding-left:1.4em; position:relative; color:var(--ink-soft); font-size:.95rem; line-height:1.6;}
-.pillar-list li::before{content:"—"; position:absolute; left:0; color:var(--wine);}
+.pillar-list li::before{content:"\2014 "; position:absolute; left:0; color:var(--wine);}
 .pillar-list b{color:var(--ink); font-weight:600;}
 .mech-visual canvas{width:100%; height:140px; display:block;}
 .mech-visual .caption{display:flex; justify-content:space-between; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-top:.8rem;}
@@ -328,7 +328,7 @@ header.nav{
   box-shadow:0 0 0 1px var(--line);
 }
 .compare-handle::after{
-  content:"↔"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  content:"\2194 "; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
   width:38px; height:38px; border-radius:50%; background:var(--paper-soft); color:var(--wine);
   display:flex; align-items:center; justify-content:center; font-size:1rem; box-shadow:0 2px 8px rgba(11,11,11,.22);
 }
@@ -351,7 +351,7 @@ input[type=range].compare-range{
 }
 .offer-banner img{width:100%; display:block; border-radius:calc(var(--radius-m) - 4px);}
 
-/* modules — grille : tout est visible, rien n'est caché */
+/* modules  grille : tout est visible, rien n'est cache */
 .module-grid{
   margin-top:2.6rem;
   display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.3rem;
@@ -406,8 +406,8 @@ input[type=range].compare-range{
 .fit-col li{padding-left:1.5em; position:relative; font-size:.95rem;}
 .fit-col.yes li{color:var(--ink-soft);}
 .fit-col.no li{color:rgba(236,231,226,.7);}
-.fit-col.yes li::before{content:"✓"; position:absolute; left:0; color:var(--wine); font-weight:700;}
-.fit-col.no li::before{content:"✕"; position:absolute; left:0; color:rgba(236,231,226,.5);}
+.fit-col.yes li::before{content:"\2713 "; position:absolute; left:0; color:var(--wine); font-weight:700;}
+.fit-col.no li::before{content:"\2715 "; position:absolute; left:0; color:rgba(236,231,226,.5);}
 
 /* faq */
 .faq{margin:2.4rem auto 0; max-width:760px; display:grid; gap:0; border-top:1px solid var(--line);}
@@ -485,7 +485,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .proof-stat .ps-num{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; color:var(--wine); font-size:clamp(2.2rem,5vw,3rem); line-height:1;}
 .proof-stat .ps-label{font-size:.76rem; letter-spacing:.06em; color:var(--ink-soft); margin-top:.55rem; text-transform:uppercase;}
 
-/* ---- Témoignages ---- */
+/* ---- Temoignages ---- */
 .tmoins{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.4rem; margin-top:2.8rem; text-align:left;}
 .tmoin{
   position:relative; background:var(--paper-soft); border:1px solid var(--blush-line); border-radius:var(--radius-m);
@@ -499,13 +499,13 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .tmoin p em{color:var(--wine); font-style:italic; font-weight:500;}
 .tmoin .t-author{margin-top:.4rem; font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase;}
 
-/* ============ Variation typo + accent bordeaux sur mots-clés ============ */
+/* ============ Variation typo + accent bordeaux sur mots-cles ============ */
 .k-accent{color:var(--accent);}
 .k-serif{font-family:'Playfair Display',serif; font-style:italic; font-weight:600;}
 .k-sans{font-family:'Poppins',sans-serif; font-weight:600; font-style:normal; letter-spacing:-.01em;}
 .band-dark .k-accent{color:var(--accent-soft);}
 
-/* ---- séparateur ornemental ---- */
+/* ---- separateur ornemental ---- */
 .divider-mark{display:flex; align-items:center; justify-content:center; gap:.9rem; margin:0 auto clamp(1.4rem,3.5vw,2.2rem); color:var(--accent); max-width:340px;}
 .band-dark .divider-mark{color:var(--accent-soft);}
 .divider-mark::before,.divider-mark::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,transparent,currentColor);}
@@ -520,7 +520,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 @keyframes btnShine{from{left:-130%;} to{left:150%;}}
 @media (prefers-reduced-motion: reduce){.btn-primary::after{display:none;}}
 
-/* ---- CTA récurrent inline ---- */
+/* ---- CTA recurrent inline ---- */
 .cta-inline{display:flex; flex-direction:column; align-items:center; gap:.9rem; margin-top:clamp(2.4rem,5vw,3.4rem); text-align:center;}
 .cta-inline .cta-kicker{font-size:.9rem; color:var(--ink-soft); font-family:'Playfair Display',serif; font-style:italic;}
 .band-dark .cta-inline .cta-kicker{color:rgba(236,231,226,.72);}
@@ -535,15 +535,15 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .notis-col.is-not{background:var(--paper-soft); border:1px solid var(--blush-line);}
 .notis-col.is-not h3{color:var(--ink-soft);}
 .notis-col.is-not li{color:var(--ink-soft);}
-.notis-col.is-not li::before{content:"✕"; position:absolute; left:0; color:var(--ink-faint); font-weight:600;}
+.notis-col.is-not li::before{content:"\2715 "; position:absolute; left:0; color:var(--ink-faint); font-weight:600;}
 .notis-col.is-is{background:var(--wine-ink); border:1px solid var(--wine); box-shadow:0 24px 44px -26px rgba(92,0,8,.3);}
 .notis-col.is-is:hover{transform:translateY(-5px); box-shadow:0 34px 56px -26px rgba(92,0,8,.38);}
 .notis-col.is-is h3{color:#F6F1EC;}
 .notis-col.is-is li{color:rgba(236,231,226,.84);}
-.notis-col.is-is li::before{content:"✓"; position:absolute; left:0; color:var(--accent-soft); font-weight:700;}
+.notis-col.is-is li::before{content:"\2713 "; position:absolute; left:0; color:var(--accent-soft); font-weight:700;}
 .notis-col.is-is li b{color:#F6F1EC; font-weight:600;}
 
-/* ---- Value stack (détail de l'offre) ---- */
+/* ---- Value stack (detail de l'offre) ---- */
 .stack{max-width:660px; margin:2.6rem auto 0; display:grid; gap:.7rem;}
 .stack-row{display:grid; grid-template-columns:1fr auto; align-items:baseline; gap:1.2rem; padding:1.05rem 1.4rem; background:rgba(236,231,226,.05); border:1px solid rgba(236,231,226,.14); border-radius:var(--radius-m); text-align:left; transition:border-color .35s, background .35s;}
 .stack-row:hover{border-color:rgba(236,231,226,.28); background:rgba(236,231,226,.08);}
@@ -552,15 +552,14 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .stack-row .s-val{color:var(--accent-soft); font-family:'Poppins',sans-serif; font-weight:600; font-size:.9rem; white-space:nowrap; letter-spacing:.02em;}
 .stack-total{display:flex; align-items:baseline; justify-content:center; gap:.7rem; margin-top:1.4rem; flex-wrap:wrap;}
 .stack-total .st-label{font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(236,231,226,.58);}
-.stack-total .st-val{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; color:rgba(236,231,226,.5); text-decoration:line-through; text-decoration-color:rgba(236,231,226,.4); font-size:1.5rem;}
-</style>
+.stack-total .st-val{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; color:rgba(236,231,226,.5); text-decoration:line-through; text-decoration-color:rgba(236,231,226,.4); font-size:1.5rem;}</style>
 
 <canvas id="signal"></canvas>
 <div class="page">
 
 <div class="topbar">
   <div id="timer-bar-recode">
-    <span id="timer-label-recode">⚡ Offre expire dans</span>
+    <span id="timer-label-recode">&#9889; Offre expire dans</span>
     <div id="timer-digits-recode">
       <div class="tr-block"><span class="tr-num" id="tr-h">00</span><span class="tr-unit">heures</span></div>
       <span class="tr-sep">:</span>
@@ -572,7 +571,7 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
   </div>
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand-logo" href="#" aria-label="RECODE — the self therapy method">
+      <a class="brand-logo" href="#" aria-label="RECODE &#8212; the self therapy method">
         <span class="rc-name">RECODE</span>
         <span class="rc-tag">the self therapy method.</span>
       </a>
@@ -588,18 +587,18 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
         <span class="rc-name">RECODE</span>
         <span class="rc-tag">the self therapy method.</span>
       </div>
-      <h1 id="heroH1">Ce que tu as appris sur toi depuis des années peut enfin devenir <span class="a-em">visible,</span> dans <span class="a-em">ton corps,</span> tes relations et ton quotidien, sans te demander <span class="a-sans">plus de discipline.</span></h1>
+      <h1 id="heroH1">Ce que tu as appris sur toi depuis des ann&#233;es peut enfin devenir <span class="a-em">visible,</span> dans <span class="a-em">ton corps,</span> tes relations et ton quotidien, sans te demander <span class="a-sans">plus de discipline.</span></h1>
       <p class="hero-emotional">Pour devenir enfin la femme que tu admires.</p>
     </div>
     <div class="hero-grid">
       <div class="reveal in">
-        <p class="sub">Recode agit à 3 niveaux que la motivation ne touche jamais&nbsp;: ton système nerveux, ton subconscient, et tes circuits de récompense.</p>
+        <p class="sub">Recode agit &#224; 3 niveaux que la motivation ne touche jamais&nbsp;: ton syst&#232;me nerveux, ton subconscient, et tes circuits de r&#233;compense.</p>
         <div class="hero-ctas">
-          <a class="btn-primary" href="#offre">Je découvre Recode</a>
+          <a class="btn-primary" href="#offre">Je d&#233;couvre Recode</a>
         </div>
       </div>
       <div class="hero-photo reveal in d1">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/6a6c744d81b566.64008889_IMG_3245.jpg" alt="Irina Sambucini en conférence">
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/6a6c744d81b566.64008889_IMG_3245.jpg" alt="Irina Sambucini en conf&#233;rence">
       </div>
     </div>
   </div>
@@ -607,13 +606,13 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 
 <section class="band-cream">
   <div class="wrap">
-    <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24,15 C19,11 11,11 7,15 L7,35 C11,31 19,31 24,35"/><path d="M24,15 C29,11 37,11 41,15 L41,35 C37,31 29,31 24,35"/></svg>Tu reconnais sûrement</span>
+    <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24,15 C19,11 11,11 7,15 L7,35 C11,31 19,31 24,35"/><path d="M24,15 C29,11 37,11 41,15 L41,35 C37,31 29,31 24,35"/></svg>Tu reconnais s&#251;rement</span>
     <div class="mirror-list">
       <p class="mirror-line reveal">Tu commences avec de bonnes intentions. Et puis, au bout de quelques jours, tout retombe. <span class="accent">Tu t'en veux.</span></p>
-      <p class="mirror-line reveal d1">Tu te sens instable, et tu as presque honte de le dire, parce que de l'extérieur, ça ne se voit pas.</p>
-      <p class="mirror-line reveal d2">Le soir, tu te promets que demain sera différent. Le lendemain, tu refais pareil.</p>
-      <p class="mirror-line reveal d3">Tu scrolles Instagram, tu vois des femmes qui ont l'air alignées et disciplinées, et tu te demandes pourquoi, toi, tu n'y arrives pas.</p>
-      <p class="mirror-line reveal d4">Tu n'as pas besoin d'un énième conseil. <span class="accent">Tu as besoin que quelque chose se pose enfin en toi.</span></p>
+      <p class="mirror-line reveal d1">Tu te sens instable, et tu as presque honte de le dire, parce que de l'ext&#233;rieur, &#231;a ne se voit pas.</p>
+      <p class="mirror-line reveal d2">Le soir, tu te promets que demain sera diff&#233;rent. Le lendemain, tu refais pareil.</p>
+      <p class="mirror-line reveal d3">Tu scrolles Instagram, tu vois des femmes qui ont l'air align&#233;es et disciplin&#233;es, et tu te demandes pourquoi, toi, tu n'y arrives pas.</p>
+      <p class="mirror-line reveal d4">Tu n'as pas besoin d'un &#233;ni&#232;me conseil. <span class="accent">Tu as besoin que quelque chose se pose enfin en toi.</span></p>
     </div>
   </div>
 </section>
@@ -621,30 +620,30 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark">
   <div class="wrap">
     <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24,24 a2,2 0 0 1 2,-2 a4,4 0 0 1 4,4 a6,6 0 0 1 -6,6 a8,8 0 0 1 -8,-8 a10,10 0 0 1 10,-10 a12,12 0 0 1 12,12"/></svg>Tu as fait ce qu'on t'a dit de faire</span>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Tu as fait les choses dans l'ordre. Ce n'est pas ça, le problème.</h2>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Tu as fait les choses dans l'ordre. Ce n'est pas &#231;a, le probl&#232;me.</h2>
     <div class="path-list">
       <div class="path-item reveal">
         <div class="label">Comprendre</div>
-        <p>Le déclic est venu, plusieurs fois. <span class="strike">Il n'a jamais tenu plus de quelques jours.</span></p>
+        <p>Le d&#233;clic est venu, plusieurs fois. <span class="strike">Il n'a jamais tenu plus de quelques jours.</span></p>
       </div>
       <div class="path-item reveal">
         <div class="label">Te remotiver</div>
-        <p>Ça a marché, un temps. Puis la motivation est repartie <span class="strike">comme elle était venue.</span></p>
+        <p>&#199;a a march&#233;, un temps. Puis la motivation est repartie <span class="strike">comme elle &#233;tait venue.</span></p>
       </div>
       <div class="path-item reveal">
         <div class="label">Discipline</div>
-        <p>Tu tiens un cadre au travail sans problème. <span class="strike">Ce n'est pas un problème de rigueur.</span></p>
+        <p>Tu tiens un cadre au travail sans probl&#232;me. <span class="strike">Ce n'est pas un probl&#232;me de rigueur.</span></p>
       </div>
       <div class="path-item reveal">
-        <div class="label">Changer de décor</div>
-        <p>Travail, ville, relation, rythme. <span class="strike">Le décor a changé. Le scénario, non.</span></p>
+        <div class="label">Changer de d&#233;cor</div>
+        <p>Travail, ville, relation, rythme. <span class="strike">Le d&#233;cor a chang&#233;. Le sc&#233;nario, non.</span></p>
       </div>
       <div class="path-item reveal">
         <div class="label">Souffler</div>
-        <p>Tu es revenue de vacances reposée. <span class="strike">Trois semaines plus tard, tout était pareil.</span></p>
+        <p>Tu es revenue de vacances repos&#233;e. <span class="strike">Trois semaines plus tard, tout &#233;tait pareil.</span></p>
       </div>
     </div>
-    <div class="closing-line reveal d2">Tu confonds comprendre et transformer. Et c'est précisément ce qui t'empêche d'avancer.</div>
+    <div class="closing-line reveal d2">Tu confonds comprendre et transformer. Et c'est pr&#233;cis&#233;ment ce qui t'emp&#234;che d'avancer.</div>
   </div>
 </section>
 
@@ -653,25 +652,25 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
     <span class="eyebrow no-line reveal">Ce qui se joue en dessous</span>
     <div class="mech-grid">
       <div class="reveal">
-        <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);">Ta tête a compris. Ça ne veut pas dire que <span class="a-alt">le programme a changé.</span></h2>
-        <p class="measure" style="margin-top:1.4rem; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem;">95&nbsp;% de tes actions quotidiennes sont pilotées par ton subconscient. Tu essaies de changer ta vie avec les 5&nbsp;% restants.</p>
-        <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ce que tu vis a un nom&nbsp;: <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--wine);">l'écart entre l'intention et l'action</em>, documenté par des chercheurs en psychologie. Ton cerveau peut comprendre exactement ce qu'il faut faire, sans jamais le transformer en geste, parce que la décision ne se joue pas là où tu crois.</p>
-        <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ta volonté a fait ce qu'elle pouvait. Le programme n'a simplement jamais changé.</p>
+        <h2 style="font-size:clamp(1.7rem,3.4vw,2.5rem);">Ta t&#234;te a compris. &#199;a ne veut pas dire que <span class="a-alt">le programme a chang&#233;.</span></h2>
+        <p class="measure" style="margin-top:1.4rem; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem;">95&nbsp;% de tes actions quotidiennes sont pilot&#233;es par ton subconscient. Tu essaies de changer ta vie avec les 5&nbsp;% restants.</p>
+        <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ce que tu vis a un nom&nbsp;: <em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--wine);">l'&#233;cart entre l'intention et l'action</em>, document&#233; par des chercheurs en psychologie. Ton cerveau peut comprendre exactement ce qu'il faut faire, sans jamais le transformer en geste, parce que la d&#233;cision ne se joue pas l&#224; o&#249; tu crois.</p>
+        <p class="measure" style="margin-top:1rem; color:var(--ink-soft);">Ta volont&#233; a fait ce qu'elle pouvait. Le programme n'a simplement jamais chang&#233;.</p>
         <ul class="pillar-list">
-          <li><b>Ton système nerveux</b>, qui décide en une fraction de seconde si tu es en sécurité ou en alerte.</li>
-          <li><b>Ton subconscient</b>, qui rejoue les mêmes schémas depuis des années.</li>
-          <li><b>Tes circuits de récompense</b>, qui te ramènent vers ce qui est familier, même quand ça ne te sert plus.</li>
+          <li><b>Ton syst&#232;me nerveux</b>, qui d&#233;cide en une fraction de seconde si tu es en s&#233;curit&#233; ou en alerte.</li>
+          <li><b>Ton subconscient</b>, qui rejoue les m&#234;mes sch&#233;mas depuis des ann&#233;es.</li>
+          <li><b>Tes circuits de r&#233;compense</b>, qui te ram&#232;nent vers ce qui est familier, m&#234;me quand &#231;a ne te sert plus.</li>
         </ul>
-        <p class="measure" style="margin-top:1.2rem; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem;">RECODE reprogramme ces 3 systèmes à la racine. Pas un de plus à comprendre.</p>
+        <p class="measure" style="margin-top:1.2rem; color:var(--wine); font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem;">RECODE reprogramme ces 3 syst&#232;mes &#224; la racine. Pas un de plus &#224; comprendre.</p>
       </div>
       <div class="mech-visual reveal d1">
         <canvas id="mechCanvas" width="600" height="280"></canvas>
-        <div class="caption"><span>Avant Recode — signal erratique</span><span>Après Recode — signal stable</span></div>
+        <div class="caption"><span>Avant Recode &#8212; signal erratique</span><span>Apr&#232;s Recode &#8212; signal stable</span></div>
       </div>
     </div>
     <div class="cta-inline reveal d2">
       <span class="cta-kicker">Si tu veux enfin travailler au bon niveau&nbsp;:</span>
-      <a class="btn-primary" href="#offre">Je découvre la méthode Recode</a>
+      <a class="btn-primary" href="#offre">Je d&#233;couvre la m&#233;thode Recode</a>
     </div>
   </div>
 </section>
@@ -679,25 +678,25 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-soft">
   <div class="wrap" style="text-align:center;">
     <div class="divider-mark reveal"><i></i></div>
-    <span class="eyebrow reveal" style="justify-content:center;">Pour être claire</span>
+    <span class="eyebrow reveal" style="justify-content:center;">Pour &#234;tre claire</span>
     <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Ce que Recode n'est pas, et ce que c'est <span class="k-sans k-accent">vraiment.</span></h2>
     <div class="notis-grid reveal d1">
       <div class="notis-col is-not">
         <h3>Ce n'est pas</h3>
         <ul>
-          <li>Une méthode de plus à comprendre par la tête</li>
-          <li>Un défi de motivation ou de discipline forcée</li>
-          <li>De la pensée positive qui reste en surface</li>
-          <li>Une énième thérapie par la parole</li>
+          <li>Une m&#233;thode de plus &#224; comprendre par la t&#234;te</li>
+          <li>Un d&#233;fi de motivation ou de discipline forc&#233;e</li>
+          <li>De la pens&#233;e positive qui reste en surface</li>
+          <li>Une &#233;ni&#232;me th&#233;rapie par la parole</li>
         </ul>
       </div>
       <div class="notis-col is-is">
         <h3>C'est</h3>
         <ul>
-          <li>Un travail sur <b>ton corps et ton système nerveux</b> — EFT, cohérence cardiaque</li>
-          <li>Une reprogrammation de <b>ton subconscient</b> et de tes circuits de récompense</li>
-          <li>Un protocole <b>progressif, ancré dans le corps</b>, pas dans la volonté</li>
-          <li>Un accompagnement sur 6&nbsp;mois, à ton rythme, avec la communauté</li>
+          <li>Un travail sur <b>ton corps et ton syst&#232;me nerveux</b> &#8212; EFT, coh&#233;rence cardiaque</li>
+          <li>Une reprogrammation de <b>ton subconscient</b> et de tes circuits de r&#233;compense</li>
+          <li>Un protocole <b>progressif, ancr&#233; dans le corps</b>, pas dans la volont&#233;</li>
+          <li>Un accompagnement sur 6&nbsp;mois, &#224; ton rythme, avec la communaut&#233;</li>
         </ul>
       </div>
     </div>
@@ -706,40 +705,40 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 
 <section class="band-blush">
   <div class="wrap">
-    <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="32" x2="42" y2="32"/><path d="M12,32 A12,12 0 0 1 36,32"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="11" y1="10" x2="15" y2="15"/><line x1="37" y1="10" x2="33" y2="15"/></svg>Et ça finit par se voir</span>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Le changement ne reste pas dans ta tête. Il se voit, <span class="k-sans k-accent">concrètement.</span></h2>
+    <span class="eyebrow has-icon reveal"><svg class="eyebrow-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="32" x2="42" y2="32"/><path d="M12,32 A12,12 0 0 1 36,32"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="11" y1="10" x2="15" y2="15"/><line x1="37" y1="10" x2="33" y2="15"/></svg>Et &#231;a finit par se voir</span>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Le changement ne reste pas dans ta t&#234;te. Il se voit, <span class="k-sans k-accent">concr&#232;tement.</span></h2>
     <div class="change-grid">
       <div class="change-cell reveal">
         <svg class="picto" viewBox="0 0 48 48" fill="none" stroke="var(--wine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8"/><line x1="24" y1="4" x2="24" y2="10"/><line x1="24" y1="38" x2="24" y2="44"/><line x1="4" y1="24" x2="10" y2="24"/><line x1="38" y1="24" x2="44" y2="24"/><line x1="10" y1="10" x2="14" y2="14"/><line x1="34" y1="34" x2="38" y2="38"/><line x1="10" y1="38" x2="14" y2="34"/><line x1="34" y1="14" x2="38" y2="10"/></svg>
-        <div class="num">Sur toi</div><p>Ton énergie change, littéralement. Ça se voit sur ton visage et dans ta posture, avant même que tu dises un mot.</p>
+        <div class="num">Sur toi</div><p>Ton &#233;nergie change, litt&#233;ralement. &#199;a se voit sur ton visage et dans ta posture, avant m&#234;me que tu dises un mot.</p>
       </div>
       <div class="change-cell reveal">
         <svg class="picto" viewBox="0 0 48 48" fill="none" stroke="var(--wine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="24" r="10"/><circle cx="30" cy="24" r="10"/></svg>
-        <div class="num">Dans tes relations</div><p>Tu arrêtes de te justifier pour un décalage que tu ne savais même pas nommer. Ton entourage le sent, même sans comprendre pourquoi.</p>
+        <div class="num">Dans tes relations</div><p>Tu arr&#234;tes de te justifier pour un d&#233;calage que tu ne savais m&#234;me pas nommer. Ton entourage le sent, m&#234;me sans comprendre pourquoi.</p>
       </div>
       <div class="change-cell reveal">
         <svg class="picto" viewBox="0 0 48 48" fill="none" stroke="var(--wine)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M16,25 L21,30 L32,18"/></svg>
-        <div class="num">Dans ton quotidien</div><p>Tu tiens ce que tu commences. Ton quotidien arrête de ressembler à une liste de résolutions abandonnées.</p>
+        <div class="num">Dans ton quotidien</div><p>Tu tiens ce que tu commences. Ton quotidien arr&#234;te de ressembler &#224; une liste de r&#233;solutions abandonn&#233;es.</p>
       </div>
     </div>
-    <p class="measure reveal d2" style="margin:2rem auto 0; color:var(--ink-soft); text-align:center;">Les gens autour de toi le remarquent avant même que tu en parles. Ça ne reste plus seulement dans ta tête.</p>
+    <p class="measure reveal d2" style="margin:2rem auto 0; color:var(--ink-soft); text-align:center;">Les gens autour de toi le remarquent avant m&#234;me que tu en parles. &#199;a ne reste plus seulement dans ta t&#234;te.</p>
   </div>
 </section>
 
 <section class="band-cream">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Qui est Irina</span>
-    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Avant d'être celle qui accompagne, elle a été celle qui cherchait.</h2>
-    <p class="measure reveal d1" style="margin:1.6rem auto 0; color:var(--ink-soft);">Sur le papier, Irina cochait toutes les cases&nbsp;: un diplôme de droit, un CDI en banque d'investissement, un appartement acheté à 23&nbsp;ans. À l'intérieur, elle fonctionnait comme sa pire ennemie — burn-out, rupture, licenciement, et cette sensation d'être à moitié présente dans sa propre vie.</p>
-    <p class="measure reveal d1" style="margin:1rem auto 0; color:var(--ink-soft);">Le jour où elle a cessé de lutter <em>contre</em> elle-même pour avancer <em>avec</em> elle, tout a changé. Elle s'est formée aux neurosciences — neuro-thérapeute certifiée — et à l'EFT, puis a construit la méthode qu'elle aurait voulu recevoir&nbsp;: <strong style="color:var(--wine); font-weight:600;">Recode</strong>.</p>
+    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Avant d'&#234;tre celle qui accompagne, elle a &#233;t&#233; celle qui cherchait.</h2>
+    <p class="measure reveal d1" style="margin:1.6rem auto 0; color:var(--ink-soft);">Sur le papier, Irina cochait toutes les cases&nbsp;: un dipl&#244;me de droit, un CDI en banque d'investissement, un appartement achet&#233; &#224; 23&nbsp;ans. &#192; l'int&#233;rieur, elle fonctionnait comme sa pire ennemie &#8212; burn-out, rupture, licenciement, et cette sensation d'&#234;tre &#224; moiti&#233; pr&#233;sente dans sa propre vie.</p>
+    <p class="measure reveal d1" style="margin:1rem auto 0; color:var(--ink-soft);">Le jour o&#249; elle a cess&#233; de lutter <em>contre</em> elle-m&#234;me pour avancer <em>avec</em> elle, tout a chang&#233;. Elle s'est form&#233;e aux neurosciences &#8212; neuro-th&#233;rapeute certifi&#233;e &#8212; et &#224; l'EFT, puis a construit la m&#233;thode qu'elle aurait voulu recevoir&nbsp;: <strong style="color:var(--wine); font-weight:600;">Recode</strong>.</p>
     <div class="transfo reveal d2">
-      <div class="transfo-row"><span class="t-before">Une femme en colère</span><span class="t-arrow">→</span><span class="t-after">une femme sereine</span></div>
-      <div class="transfo-row"><span class="t-before">Qui court après les autres</span><span class="t-arrow">→</span><span class="t-after">qui connaît sa valeur</span></div>
-      <div class="transfo-row"><span class="t-before">Sans hobby ni passion</span><span class="t-arrow">→</span><span class="t-after">qui sait ce qu'elle veut</span></div>
+      <div class="transfo-row"><span class="t-before">Une femme en col&#232;re</span><span class="t-arrow">&#8594;</span><span class="t-after">une femme sereine</span></div>
+      <div class="transfo-row"><span class="t-before">Qui court apr&#232;s les autres</span><span class="t-arrow">&#8594;</span><span class="t-after">qui conna&#238;t sa valeur</span></div>
+      <div class="transfo-row"><span class="t-before">Sans hobby ni passion</span><span class="t-arrow">&#8594;</span><span class="t-after">qui sait ce qu'elle veut</span></div>
     </div>
-    <p class="credibility reveal d3">Coach spécialisée en neurosciences &amp; Self&nbsp;Therapy · +200&nbsp;femmes accompagnées · <strong style="color:var(--ink-soft); font-weight:600;">@irina.smb</strong>, 50K&nbsp;abonnés · podcast <em>Self Care Talk</em> · conférences DIANE, Decathlon &amp; collaboration Dove.</p>
+    <p class="credibility reveal d3">Coach sp&#233;cialis&#233;e en neurosciences &amp; Self&nbsp;Therapy &#183; +200&nbsp;femmes accompagn&#233;es &#183; <strong style="color:var(--ink-soft); font-weight:600;">@irina.smb</strong>, 50K&nbsp;abonn&#233;s &#183; podcast <em>Self Care Talk</em> &#183; conf&#233;rences DIANE, Decathlon &amp; collaboration Dove.</p>
     <div class="cta-inline reveal d3">
-      <span class="cta-kicker">La méthode qu'elle a construite pour elle, elle l'a rendue accessible.</span>
+      <span class="cta-kicker">La m&#233;thode qu'elle a construite pour elle, elle l'a rendue accessible.</span>
       <a class="btn-primary" href="#offre">Je rejoins Recode</a>
     </div>
   </div>
@@ -748,69 +747,69 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark" id="offre">
   <div class="wrap">
     <div class="divider-mark reveal"><i></i></div>
-    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Ce que tu reçois, <span class="k-sans k-accent">concrètement.</span></h2>
+    <h2 class="reveal" style="font-size:clamp(1.6rem,3vw,2.3rem);">Ce que tu re&#231;ois, <span class="k-sans k-accent">concr&#232;tement.</span></h2>
     <div class="offer-banner reveal d1">
-      <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d9173644dc68.14047889_Designsanstitre19.png" alt="Aperçu du programme Recode : vidéos, ebooks, lives, communauté">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d9173644dc68.14047889_Designsanstitre19.png" alt="Aper&#231;u du programme Recode : vid&#233;os, ebooks, lives, communaut&#233;">
     </div>
     <div class="module-grid reveal d2">
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module R — Réguler">
-        <div class="m-body"><span class="m-title">R — Réguler</span><span class="m-desc">Tu apaises ton système nerveux saturé et tu sors du mode survie. Auto-diagnostic de départ, compréhension des 4F, cohérence cardiaque et EFT guidé.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module R &#8212; R&#233;guler">
+        <div class="m-body"><span class="m-title">R &#8212; R&#233;guler</span><span class="m-desc">Tu apaises ton syst&#232;me nerveux satur&#233; et tu sors du mode survie. Auto-diagnostic de d&#233;part, compr&#233;hension des 4F, coh&#233;rence cardiaque et EFT guid&#233;.</span></div>
       </div>
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf384c4da1.09241667_2.png" alt="Module E — Explorer">
-        <div class="m-body"><span class="m-title">E — Explorer</span><span class="m-desc">Tu remontes aux schémas qui se répètent, dans ton couple, ton travail, l'image que tu as de toi. Une cartographie de ce qui tourne en boucle.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf384c4da1.09241667_2.png" alt="Module E &#8212; Explorer">
+        <div class="m-body"><span class="m-title">E &#8212; Explorer</span><span class="m-desc">Tu remontes aux sch&#233;mas qui se r&#233;p&#232;tent, dans ton couple, ton travail, l'image que tu as de toi. Une cartographie de ce qui tourne en boucle.</span></div>
       </div>
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf5636c9c5.37809630_3.png" alt="Module C — Connecter">
-        <div class="m-body"><span class="m-title">C — Connecter</span><span class="m-desc">Tu relies enfin ce que tu ressens à ce que vit ton corps, avec la méthode ARC. Ce qui se jouait en silence devient concret.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf5636c9c5.37809630_3.png" alt="Module C &#8212; Connecter">
+        <div class="m-body"><span class="m-title">C &#8212; Connecter</span><span class="m-desc">Tu relies enfin ce que tu ressens &#224; ce que vit ton corps, avec la m&#233;thode ARC. Ce qui se jouait en silence devient concret.</span></div>
       </div>
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf69165596.56922299_4.png" alt="Module O — Ouvrir">
-        <div class="m-body"><span class="m-title">O — Ouvrir</span><span class="m-desc">Tu identifies les croyances qui filtrent tout ce que tu vois de toi, et tu les reprogrammes à la racine.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf69165596.56922299_4.png" alt="Module O &#8212; Ouvrir">
+        <div class="m-body"><span class="m-title">O &#8212; Ouvrir</span><span class="m-desc">Tu identifies les croyances qui filtrent tout ce que tu vois de toi, et tu les reprogrammes &#224; la racine.</span></div>
       </div>
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf77ef1257.43605979_5.png" alt="Module D — Décider">
-        <div class="m-body"><span class="m-title">D — Décider</span><span class="m-desc">Tu sors de la discipline forcée. Un système personnel de constance remplace la boucle motivation puis abandon.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf77ef1257.43605979_5.png" alt="Module D &#8212; D&#233;cider">
+        <div class="m-body"><span class="m-title">D &#8212; D&#233;cider</span><span class="m-desc">Tu sors de la discipline forc&#233;e. Un syst&#232;me personnel de constance remplace la boucle motivation puis abandon.</span></div>
       </div>
       <div class="module-card">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module É — Évoluer">
-        <div class="m-body"><span class="m-title">É — Évoluer</span><span class="m-desc">Une estime de toi qui ne dépend plus de ce que tu montres, mais de ce que tu incarnes. Elle reste, même les jours difficiles.</span></div>
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module &#201; &#8212; &#201;voluer">
+        <div class="m-body"><span class="m-title">&#201; &#8212; &#201;voluer</span><span class="m-desc">Une estime de toi qui ne d&#233;pend plus de ce que tu montres, mais de ce que tu incarnes. Elle reste, m&#234;me les jours difficiles.</span></div>
       </div>
     </div>
     <p class="bonus-heading reveal d3"><span class="n">9</span> Bonus offerts</p>
     <div class="bonus-grid reveal d3">
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91f01726030.22488605_regudurgence.png" alt="Kit de régulation d'urgence"><span class="b-name">Régulation d'urgence</span></div>
+      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91f01726030.22488605_regudurgence.png" alt="Kit de r&#233;gulation d'urgence"><span class="b-name">R&#233;gulation d'urgence</span></div>
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91db7e90cc2.37973302_30prompts.png" alt="Journaling, 30 prompts"><span class="b-name">Journaling, 30 prompts</span></div>
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91fbfba8ec1.13759170_trackerdhabitudes.png" alt="Tracker d'habitudes"><span class="b-name">Tracker d'habitudes</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91d8a972ce1.95994664_cyclefeminin.png" alt="Cycle féminin et énergie"><span class="b-name">Cycle féminin</span></div>
+      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91d8a972ce1.95994664_cyclefeminin.png" alt="Cycle f&#233;minin et &#233;nergie"><span class="b-name">Cycle f&#233;minin</span></div>
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e1aee55a2.69120277_bookclub.png" alt="Book club"><span class="b-name">Book club</span></div>
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ee0924c60.48251465_rituelsdelune.png" alt="Rituels lunaires"><span class="b-name">Rituels lunaires</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e27084e23.58118462_ikigai.png" alt="Guide Ikigaï"><span class="b-name">Guide Ikigaï</span></div>
-      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ebfe8ed46.74067367_50ideesactivitesafaireseule.png" alt="50 activités solo"><span class="b-name">50 activités solo</span></div>
+      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e27084e23.58118462_ikigai.png" alt="Guide Ikiga&#239;"><span class="b-name">Guide Ikiga&#239;</span></div>
+      <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91ebfe8ed46.74067367_50ideesactivitesafaireseule.png" alt="50 activit&#233;s solo"><span class="b-name">50 activit&#233;s solo</span></div>
       <div class="bonus-item"><img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d91e435e9bc8.18260651_hormonesdubonheur.png" alt="Hormones du bonheur"><span class="b-name">Hormones du bonheur</span></div>
     </div>
     <div class="stack reveal d3">
-      <div class="stack-row"><span class="s-label"><b>Le programme complet R.E.C.O.D.E.</b> — les 6 modules, accès à vie</span><span class="s-val">valeur 1&nbsp;099€</span></div>
-      <div class="stack-row"><span class="s-label"><b>12&nbsp;h de lives de groupe</b> sur 6&nbsp;mois + communauté WhatsApp à vie</span><span class="s-val">valeur 399€</span></div>
-      <div class="stack-row"><span class="s-label"><b>Auto-diagnostic</b> + questionnaires de suivi à 1, 3 et 6&nbsp;mois</span><span class="s-val">inclus</span></div>
-      <div class="stack-row"><span class="s-label"><b>Les 9 bonus offerts</b> — journaling, capsules EFT, tracker, Face Yoga…</span><span class="s-val">valeur 750€</span></div>
+      <div class="stack-row"><span class="s-label"><b>Le programme complet R.E.C.O.D.E.</b> &#8212; les 6 modules, acc&#232;s &#224; vie</span><span class="s-val">valeur 1&nbsp;099&#8364;</span></div>
+      <div class="stack-row"><span class="s-label"><b>12&nbsp;h de lives de groupe</b> sur 6&nbsp;mois + communaut&#233; WhatsApp &#224; vie</span><span class="s-val">valeur 399&#8364;</span></div>
+      <div class="stack-row"><span class="s-label"><b>Auto-diagnostic</b> + questionnaires de suivi &#224; 1, 3 et 6&nbsp;mois</span><span class="s-val">inclus</span></div>
+      <div class="stack-row"><span class="s-label"><b>Les 9 bonus offerts</b> &#8212; journaling, capsules EFT, tracker, Face Yoga&#8230;</span><span class="s-val">valeur 750&#8364;</span></div>
     </div>
     <div class="stack-total reveal d3">
       <span class="st-label">Valeur totale</span>
-      <span class="st-val">2&nbsp;248€</span>
+      <span class="st-val">2&nbsp;248&#8364;</span>
     </div>
     <div class="pricing reveal d3">
       <div class="price-main">
-        <span class="price-value">497€</span>
-        <span class="price-old">au lieu de 2&nbsp;248€</span>
+        <span class="price-value">497&#8364;</span>
+        <span class="price-old">au lieu de 2&nbsp;248&#8364;</span>
       </div>
-      <div class="price-plans">Paiement en 1x, 4x ou 6x sans frais · accès immédiat &amp; à vie.</div>
+      <div class="price-plans">Paiement en 1x, 4x ou 6x sans frais &#183; acc&#232;s imm&#233;diat &amp; &#224; vie.</div>
       <div class="hero-ctas" style="justify-content:center; margin-top:1.8rem;">
         <a class="btn-primary" href="#">Je rejoins Recode maintenant</a>
       </div>
     </div>
-    <p class="disclaimer reveal d3">Recode demande <strong style="color:rgba(246,241,236,.85); font-weight:600;">un vrai investissement de ta part</strong>, ce n'est pas une baguette magique. C'est pour ça que la garantie ci-dessous est conditionnée à un minimum de pratique, pas juste au temps qui passe.</p>
+    <p class="disclaimer reveal d3">Recode demande <strong style="color:rgba(246,241,236,.85); font-weight:600;">un vrai investissement de ta part</strong>, ce n'est pas une baguette magique. C'est pour &#231;a que la garantie ci-dessous est conditionn&#233;e &#224; un minimum de pratique, pas juste au temps qui passe.</p>
   </div>
 </section>
 
@@ -822,16 +821,16 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
       <div class="fit-col yes">
         <h3>C'est pour toi si</h3>
         <ul>
-          <li>Tu as déjà compris beaucoup de choses sur toi, sans que ça change grand-chose au quotidien</li>
+          <li>Tu as d&#233;j&#224; compris beaucoup de choses sur toi, sans que &#231;a change grand-chose au quotidien</li>
           <li>Tu tiens un cadre dans d'autres domaines de ta vie</li>
-          <li>Tu es fatiguée de te motiver en boucle et tu veux que quelque chose se pose, pour de vrai</li>
+          <li>Tu es fatigu&#233;e de te motiver en boucle et tu veux que quelque chose se pose, pour de vrai</li>
         </ul>
       </div>
       <div class="fit-col no">
         <h3>Pas pour toi si</h3>
         <ul>
-          <li>Tu cherches une solution rapide sans rien changer à ton fonctionnement intérieur</li>
-          <li>Tu n'es pas prête à regarder ce qui se passe sous la surface</li>
+          <li>Tu cherches une solution rapide sans rien changer &#224; ton fonctionnement int&#233;rieur</li>
+          <li>Tu n'es pas pr&#234;te &#224; regarder ce qui se passe sous la surface</li>
         </ul>
       </div>
     </div>
@@ -843,32 +842,32 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
     <span class="eyebrow reveal" style="justify-content:center;">Ce que tu te demandes encore</span>
     <div class="faq reveal d1">
       <details class="faq-item" open>
-        <summary class="faq-q">J'ai déjà tout essayé, pourquoi ça marcherait cette fois ?<span class="plus">+</span></summary>
-        <p class="faq-a">Parce que tout ce que tu as essayé jusque-là s'adressait à ta tête&nbsp;: ta compréhension, ta volonté — les 5&nbsp;%. Recode agit sur <strong style="color:var(--ink); font-weight:600;">ton système nerveux, ton subconscient et tes circuits de récompense</strong>, les 95&nbsp;% qui pilotent vraiment tes comportements. Ce n'est pas toi qui as échoué&nbsp;: c'est une méthode qui ne travaillait pas au bon niveau.</p>
+        <summary class="faq-q">J'ai d&#233;j&#224; tout essay&#233;, pourquoi &#231;a marcherait cette fois ?<span class="plus">+</span></summary>
+        <p class="faq-a">Parce que tout ce que tu as essay&#233; jusque-l&#224; s'adressait &#224; ta t&#234;te&nbsp;: ta compr&#233;hension, ta volont&#233; &#8212; les 5&nbsp;%. Recode agit sur <strong style="color:var(--ink); font-weight:600;">ton syst&#232;me nerveux, ton subconscient et tes circuits de r&#233;compense</strong>, les 95&nbsp;% qui pilotent vraiment tes comportements. Ce n'est pas toi qui as &#233;chou&#233;&nbsp;: c'est une m&#233;thode qui ne travaillait pas au bon niveau.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q">Est-ce que les neurosciences et l'EFT, ça marche vraiment ?<span class="plus">+</span></summary>
-        <p class="faq-a">Oui, et c'est prouvé. Grâce à la <strong style="color:var(--ink); font-weight:600;">plasticité neuronale</strong>, ton cerveau se remodèle à tout âge&nbsp;— chaque nouvelle pratique crée de nouvelles connexions. Recode s'appuie sur des mécanismes documentés&nbsp;: plasticité, filtre attentionnel (SAR), cohérence cardiaque, EFT. Pas de promesses marketing, des leviers concrets.</p>
+        <summary class="faq-q">Est-ce que les neurosciences et l'EFT, &#231;a marche vraiment ?<span class="plus">+</span></summary>
+        <p class="faq-a">Oui, et c'est prouv&#233;. Gr&#226;ce &#224; la <strong style="color:var(--ink); font-weight:600;">plasticit&#233; neuronale</strong>, ton cerveau se remod&#232;le &#224; tout &#226;ge&nbsp;&#8212; chaque nouvelle pratique cr&#233;e de nouvelles connexions. Recode s'appuie sur des m&#233;canismes document&#233;s&nbsp;: plasticit&#233;, filtre attentionnel (SAR), coh&#233;rence cardiaque, EFT. Pas de promesses marketing, des leviers concrets.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q">Quelle différence avec une thérapie chez un psy ?<span class="plus">+</span></summary>
-        <p class="faq-a">Une thérapie classique travaille surtout par la parole et la compréhension. Recode est un <strong style="color:var(--ink); font-weight:600;">protocole structuré qui relie le corps et l'esprit</strong>&nbsp;: on régule d'abord ton système nerveux, puis on reprogramme tes croyances. Tu avances à ton rythme, avec un accompagnement, et pour une fraction du prix de séances à répétition.</p>
+        <summary class="faq-q">Quelle diff&#233;rence avec une th&#233;rapie chez un psy ?<span class="plus">+</span></summary>
+        <p class="faq-a">Une th&#233;rapie classique travaille surtout par la parole et la compr&#233;hension. Recode est un <strong style="color:var(--ink); font-weight:600;">protocole structur&#233; qui relie le corps et l'esprit</strong>&nbsp;: on r&#233;gule d'abord ton syst&#232;me nerveux, puis on reprogramme tes croyances. Tu avances &#224; ton rythme, avec un accompagnement, et pour une fraction du prix de s&#233;ances &#224; r&#233;p&#233;tition.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">Avec mon travail et mes enfants, je n'aurai pas le temps de m'y tenir.<span class="plus">+</span></summary>
-        <p class="faq-a">Recode, c'est <em>faire moins mais mieux</em>. Un module toutes les deux semaines, des pratiques courtes, une discipline douce pensée pour ta réalité — pas un planning de militaire. Les lives sont en replay illimité, et la plateforme reste accessible à vie&nbsp;: tu avances quand tu peux.</p>
+        <p class="faq-a">Recode, c'est <em>faire moins mais mieux</em>. Un module toutes les deux semaines, des pratiques courtes, une discipline douce pens&#233;e pour ta r&#233;alit&#233; &#8212; pas un planning de militaire. Les lives sont en replay illimit&#233;, et la plateforme reste accessible &#224; vie&nbsp;: tu avances quand tu peux.</p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">Et si j'abandonne encore ?<span class="plus">+</span></summary>
-        <p class="faq-a">Si tu as abandonné avant, ce n'est pas un manque de volonté&nbsp;: c'est ton cerveau qui confond changement et danger. Recode commence justement par <strong style="color:var(--ink); font-weight:600;">réguler ton système nerveux</strong> pour qu'il se sente en sécurité — c'est ce qui rend le changement tenable. Et tu es couverte par la garantie 6 mois&nbsp;: tu n'as rien à perdre.</p>
+        <p class="faq-a">Si tu as abandonn&#233; avant, ce n'est pas un manque de volont&#233;&nbsp;: c'est ton cerveau qui confond changement et danger. Recode commence justement par <strong style="color:var(--ink); font-weight:600;">r&#233;guler ton syst&#232;me nerveux</strong> pour qu'il se sente en s&#233;curit&#233; &#8212; c'est ce qui rend le changement tenable. Et tu es couverte par la garantie 6 mois&nbsp;: tu n'as rien &#224; perdre.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q">« Je suis comme ça, c'est mon caractère » — ça peut vraiment changer ?<span class="plus">+</span></summary>
-        <p class="faq-a">Ce que tu appelles « ton caractère », c'est souvent un système nerveux saturé qui réagit. L'anxiété, l'hypersensibilité, les réactions excessives sont des <strong style="color:var(--ink); font-weight:600;">réponses, pas des traits</strong>. Tu n'es pas ton passé&nbsp;: tu es ce que tu choisis de recâbler.</p>
+        <summary class="faq-q">&#171; Je suis comme &#231;a, c'est mon caract&#232;re &#187; &#8212; &#231;a peut vraiment changer ?<span class="plus">+</span></summary>
+        <p class="faq-a">Ce que tu appelles &#171; ton caract&#232;re &#187;, c'est souvent un syst&#232;me nerveux satur&#233; qui r&#233;agit. L'anxi&#233;t&#233;, l'hypersensibilit&#233;, les r&#233;actions excessives sont des <strong style="color:var(--ink); font-weight:600;">r&#233;ponses, pas des traits</strong>. Tu n'es pas ton pass&#233;&nbsp;: tu es ce que tu choisis de rec&#226;bler.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q">C'est un budget — est-ce que ça vaut vraiment le coup ?<span class="plus">+</span></summary>
-        <p class="faq-a">Vois-le comme un investissement, pas une dépense. Combien te coûtent, chaque année, les séances ponctuelles, le temps perdu à scroller, la charge mentale de ne pas être bien avec toi&nbsp;? Recode, c'est un accès à vie, une communauté, un suivi sur 6&nbsp;mois — et une garantie de remboursement si tu joues le jeu sans résultat.</p>
+        <summary class="faq-q">C'est un budget &#8212; est-ce que &#231;a vaut vraiment le coup ?<span class="plus">+</span></summary>
+        <p class="faq-a">Vois-le comme un investissement, pas une d&#233;pense. Combien te co&#251;tent, chaque ann&#233;e, les s&#233;ances ponctuelles, le temps perdu &#224; scroller, la charge mentale de ne pas &#234;tre bien avec toi&nbsp;? Recode, c'est un acc&#232;s &#224; vie, une communaut&#233;, un suivi sur 6&nbsp;mois &#8212; et une garantie de remboursement si tu joues le jeu sans r&#233;sultat.</p>
       </details>
     </div>
   </div>
@@ -877,30 +876,30 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-cream">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Garantie transformation, 6 mois</span>
-    <p class="reveal measure" style="margin:0 auto; color:var(--ink-soft);">Si après 6 mois tu ne constates aucune amélioration, <strong style="color:var(--wine); font-weight:600;">tu es remboursée intégralement</strong>. La seule condition&nbsp;: avoir suivi tes 12h de lives, visionné tous les modules et fait les exercices. Un simple email suffit — sans question, sans justification. On ne te demande pas de croire, on te demande d'essayer, pour de vrai.</p>
+    <p class="reveal measure" style="margin:0 auto; color:var(--ink-soft);">Si apr&#232;s 6 mois tu ne constates aucune am&#233;lioration, <strong style="color:var(--wine); font-weight:600;">tu es rembours&#233;e int&#233;gralement</strong>. La seule condition&nbsp;: avoir suivi tes 12h de lives, visionn&#233; tous les modules et fait les exercices. Un simple email suffit &#8212; sans question, sans justification. On ne te demande pas de croire, on te demande d'essayer, pour de vrai.</p>
   </div>
 </section>
 
 <section class="band-blush">
   <div class="wrap" style="text-align:center;">
     <span class="eyebrow reveal" style="justify-content:center;">Elles ont franchi le pas</span>
-    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Des centaines de femmes ont déjà cessé de <span class="k-sans k-accent">subir</span> leur vie.</h2>
+    <h2 class="reveal" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Des centaines de femmes ont d&#233;j&#224; cess&#233; de <span class="k-sans k-accent">subir</span> leur vie.</h2>
     <div class="proof-stats reveal d1">
-      <div class="proof-stat"><span class="ps-num" data-count="200" data-suffix="+">0</span><span class="ps-label">femmes accompagnées</span></div>
-      <div class="proof-stat"><span class="ps-num" data-count="50" data-suffix="K">0</span><span class="ps-label">abonnés @irina.smb</span></div>
-      <div class="proof-stat"><span class="ps-num" data-count="60" data-suffix="K+">0</span><span class="ps-label">écoutes du podcast</span></div>
+      <div class="proof-stat"><span class="ps-num" data-count="200" data-suffix="+">0</span><span class="ps-label">femmes accompagn&#233;es</span></div>
+      <div class="proof-stat"><span class="ps-num" data-count="50" data-suffix="K">0</span><span class="ps-label">abonn&#233;s @irina.smb</span></div>
+      <div class="proof-stat"><span class="ps-num" data-count="60" data-suffix="K+">0</span><span class="ps-label">&#233;coutes du podcast</span></div>
     </div>
-    <p class="measure reveal d2" style="margin:2.2rem auto 0; color:var(--ink-soft);">Des femmes en burn-out, en reconversion, en rupture. Des femmes qui rejouaient les mêmes schémas, qui manquaient de confiance, mentalement surchargées. Elles avaient un point commun&nbsp;: elles ne voulaient plus seulement <em>comprendre</em> — elles voulaient enfin se <em>transformer</em>.</p>
+    <p class="measure reveal d2" style="margin:2.2rem auto 0; color:var(--ink-soft);">Des femmes en burn-out, en reconversion, en rupture. Des femmes qui rejouaient les m&#234;mes sch&#233;mas, qui manquaient de confiance, mentalement surcharg&#233;es. Elles avaient un point commun&nbsp;: elles ne voulaient plus seulement <em>comprendre</em> &#8212; elles voulaient enfin se <em>transformer</em>.</p>
     <div class="tmoins reveal d3">
       <blockquote class="tmoin">
-        <span class="qmark">“</span>
-        <p>J'avais vraiment un système nerveux épuisé. Aujourd'hui, j'ai eu <em>le courage de me reprendre en main</em>. Je savais que RECODE allait m'aider, mais pas autant&nbsp;: c'est vraiment <em>un travail de fond</em>. J'ai l'impression de <em>me redécouvrir</em>.</p>
-        <span class="t-author">— Membre de RECODE</span>
+        <span class="qmark">&#8220;</span>
+        <p>J'avais vraiment un syst&#232;me nerveux &#233;puis&#233;. Aujourd'hui, j'ai eu <em>le courage de me reprendre en main</em>. Je savais que RECODE allait m'aider, mais pas autant&nbsp;: c'est vraiment <em>un travail de fond</em>. J'ai l'impression de <em>me red&#233;couvrir</em>.</p>
+        <span class="t-author">&#8212; Membre de RECODE</span>
       </blockquote>
       <blockquote class="tmoin">
-        <span class="qmark">“</span>
-        <p>Une vraie coach, disponible, à l'écoute — comparé aux autres programmes que j'ai pu faire, ça fait toute la différence. Mon compagnon lui-même voyait <em>un réel changement en moi</em>.</p>
-        <span class="t-author">— Membre de RECODE</span>
+        <span class="qmark">&#8220;</span>
+        <p>Une vraie coach, disponible, &#224; l'&#233;coute &#8212; compar&#233; aux autres programmes que j'ai pu faire, &#231;a fait toute la diff&#233;rence. Mon compagnon lui-m&#234;me voyait <em>un r&#233;el changement en moi</em>.</p>
+        <span class="t-author">&#8212; Membre de RECODE</span>
       </blockquote>
     </div>
   </div>
@@ -909,16 +908,16 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 <section class="band-dark cta-final" id="cta">
   <div class="wrap">
     <span class="eyebrow reveal" style="justify-content:center;">Recode</span>
-    <h2 class="reveal">Tu sais déjà ce que tu devrais faire. La question n'a <span class="k-sans k-accent">jamais</span> été là.</h2>
-    <p class="sub reveal d1">Recode reprogramme ton système nerveux, ton subconscient et tes circuits de récompense, pour devenir enfin la femme que tu admires.</p>
+    <h2 class="reveal">Tu sais d&#233;j&#224; ce que tu devrais faire. La question n'a <span class="k-sans k-accent">jamais</span> &#233;t&#233; l&#224;.</h2>
+    <p class="sub reveal d1">Recode reprogramme ton syst&#232;me nerveux, ton subconscient et tes circuits de r&#233;compense, pour devenir enfin la femme que tu admires.</p>
     <div class="hero-ctas reveal d2">
       <a class="btn-primary" href="#offre">Je commence Recode</a>
     </div>
-    <p class="reveal d3" style="margin:1.4rem auto 0; font-size:.82rem; color:rgba(236,231,226,.6);">Garantie 6 mois · paiement en 4x sans frais · accès à vie</p>
+    <p class="reveal d3" style="margin:1.4rem auto 0; font-size:.82rem; color:rgba(236,231,226,.6);">Garantie 6 mois &#183; paiement en 4x sans frais &#183; acc&#232;s &#224; vie</p>
   </div>
 </section>
 
-<footer>© Irina Sambucini — Programme Recode</footer>
+<footer>&#169; Irina Sambucini &#8212; Programme Recode</footer>
 
 </div>
 
