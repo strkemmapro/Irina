@@ -490,6 +490,20 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
 .proof-stat{display:flex; flex-direction:column; align-items:center;}
 .proof-stat .ps-num{font-family:'Playfair Display',serif; font-style:italic; font-weight:700; color:var(--wine); font-size:clamp(2.2rem,5vw,3rem); line-height:1;}
 .proof-stat .ps-label{font-size:.76rem; letter-spacing:.06em; color:var(--ink-soft); margin-top:.55rem; text-transform:uppercase;}
+
+/* ---- Témoignages ---- */
+.tmoins{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.4rem; margin-top:2.8rem; text-align:left;}
+.tmoin{
+  position:relative; background:var(--paper-soft); border:1px solid var(--blush-line); border-radius:var(--radius-m);
+  padding:2rem 1.9rem; margin:0; box-shadow:0 20px 40px -28px rgba(11,11,11,.2);
+  display:flex; flex-direction:column; gap:1.1rem;
+  transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s, border-color .4s;
+}
+.tmoin:hover{transform:translateY(-5px); box-shadow:0 30px 54px -28px rgba(92,0,8,.22); border-color:var(--wine);}
+.tmoin .qmark{font-family:'Playfair Display',serif; font-weight:700; font-size:2.6rem; line-height:.5; color:var(--wine); opacity:.55; height:.6em;}
+.tmoin p{margin:0; color:var(--ink); font-size:1rem; line-height:1.72;}
+.tmoin p em{color:var(--wine); font-style:italic; font-weight:500;}
+.tmoin .t-author{margin-top:.4rem; font-size:.76rem; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase;}
 </style>
 </head>
 <body>
@@ -780,6 +794,18 @@ footer{padding:40px 0; text-align:center; font-size:.78rem; color:var(--ink-fain
       <div class="proof-stat"><span class="ps-num">60K+</span><span class="ps-label">écoutes du podcast</span></div>
     </div>
     <p class="measure reveal d2" style="margin:2.2rem auto 0; color:var(--ink-soft);">Des femmes en burn-out, en reconversion, en rupture. Des femmes qui rejouaient les mêmes schémas, qui manquaient de confiance, mentalement surchargées. Elles avaient un point commun&nbsp;: elles ne voulaient plus seulement <em>comprendre</em> — elles voulaient enfin se <em>transformer</em>.</p>
+    <div class="tmoins reveal d3">
+      <blockquote class="tmoin">
+        <span class="qmark">“</span>
+        <p>J'avais vraiment un système nerveux épuisé. Aujourd'hui, j'ai eu <em>le courage de me reprendre en main</em>. Je savais que RECODE allait m'aider, mais pas autant&nbsp;: c'est vraiment <em>un travail de fond</em>. J'ai l'impression de <em>me redécouvrir</em>.</p>
+        <span class="t-author">— Membre de RECODE</span>
+      </blockquote>
+      <blockquote class="tmoin">
+        <span class="qmark">“</span>
+        <p>Une vraie coach, disponible, à l'écoute — comparé aux autres programmes que j'ai pu faire, ça fait toute la différence. Mon compagnon lui-même voyait <em>un réel changement en moi</em>.</p>
+        <span class="t-author">— Membre de RECODE</span>
+      </blockquote>
+    </div>
   </div>
 </section>
 
