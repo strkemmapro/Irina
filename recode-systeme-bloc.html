@@ -318,7 +318,9 @@ header.nav{
   border:1px solid var(--line); aspect-ratio:4/5; background:var(--wine-ink);
   box-shadow:0 24px 48px -28px rgba(11,11,11,.32);
 }
-.compare-side{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.4rem;}
+.compare-side{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:.4rem; overflow:hidden;}
+.compare-side img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center;}
+.compare-side .tag,.compare-side .mono{position:relative; z-index:1;}
 .compare-side.before{background:linear-gradient(160deg,#3a0206,#1A0304); color:#ECE7E2;}
 .compare-side.after{background:linear-gradient(160deg,var(--blush),var(--paper-soft)); color:var(--wine); clip-path:inset(0 0 0 50%);}
 .compare-side .tag{font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; opacity:.75;}
@@ -786,6 +788,13 @@ h2.ttl.reveal.in::after, .reveal.in h2.ttl::after{transform:scaleX(1);}
     <h2 class="reveal ttl" style="margin:0 auto; font-size:clamp(1.6rem,3vw,2.3rem);">Avant d'&#234;tre celle qui accompagne, elle a &#233;t&#233; celle qui cherchait.</h2>
     <p class="measure reveal d1" style="margin:1.6rem auto 0; color:var(--ink-soft);">Sur le papier, Irina cochait toutes les cases&nbsp;: un dipl&#244;me de droit, un CDI en banque d'investissement, un appartement achet&#233; &#224; 23&nbsp;ans. &#192; l'int&#233;rieur, elle fonctionnait comme sa pire ennemie &#8212; burn-out, rupture, licenciement, et cette sensation d'&#234;tre &#224; moiti&#233; pr&#233;sente dans sa propre vie.</p>
     <p class="measure reveal d1" style="margin:1rem auto 0; color:var(--ink-soft);">Le jour o&#249; elle a cess&#233; de lutter <em>contre</em> elle-m&#234;me pour avancer <em>avec</em> elle, tout a chang&#233;. Elle s'est form&#233;e aux neurosciences &#8212; neuro-th&#233;rapeute certifi&#233;e &#8212; et &#224; l'EFT, puis a construit la m&#233;thode qu'elle aurait voulu recevoir&nbsp;: <strong style="color:var(--wine); font-weight:600;">Recode</strong>.</p>
+    <div class="compare reveal d1">
+      <div class="compare-side before"><span class="tag">Avant</span><span class="mono">I.S.</span></div>
+      <div class="compare-side after"><span class="tag">Apr&#232;s</span><span class="mono">I.S.</span></div>
+      <div class="compare-handle" style="left:50%;"></div>
+      <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Comparer avant et apr&#232;s">
+    </div>
+    <p class="irina-quote reveal d2">Le m&#234;me regard, deux histoires&nbsp;: celle qu'elle subissait, et celle qu'elle a choisie. Fais glisser pour voir le basculement.</p>
     <div class="transfo reveal d2">
       <div class="transfo-row"><span class="t-before">Une femme en col&#232;re</span><span class="t-arrow">&#8594;</span><span class="t-after">une femme sereine</span></div>
       <div class="transfo-row"><span class="t-before">Qui court apr&#232;s les autres</span><span class="t-arrow">&#8594;</span><span class="t-after">qui conna&#238;t sa valeur</span></div>
