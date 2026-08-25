@@ -183,7 +183,8 @@ header.nav{
 .hero-top h1{font-size:clamp(2.1rem,4.2vw,3.4rem);}
 .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(32px,6vw,80px); align-items:center;}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
-.hero .sub{font-family:'Poppins',sans-serif; font-weight:400; font-size:clamp(1.05rem,1.6vw,1.3rem); color:var(--ink-soft); margin-top:0; max-width:48ch;}
+.hero .sub{font-family:'Poppins',sans-serif; font-weight:400; font-size:clamp(1.05rem,1.6vw,1.3rem); color:var(--ink-soft); margin-top:0; max-width:48ch; margin-left:auto; margin-right:auto; text-align:center;}
+.hero .hero-ctas{justify-content:center;}
 .hero-emotional{font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:clamp(1.1rem,1.9vw,1.4rem); color:var(--wine); margin-top:1.2rem; margin-bottom:0;}
 .hero-ctas{display:flex; gap:16px; align-items:center; margin-top:2.4rem; flex-wrap:wrap;}
 
@@ -649,17 +650,6 @@ h2.ttl.reveal.in::after, .reveal.in h2.ttl::after{transform:scaleX(1);}
 <div class="page">
 
 <div class="topbar">
-  <div id="timer-bar-recode">
-    <span id="timer-label-recode">⚡ Offre expire dans</span>
-    <div id="timer-digits-recode">
-      <div class="tr-block"><span class="tr-num" id="tr-h">00</span><span class="tr-unit">heures</span></div>
-      <span class="tr-sep">:</span>
-      <div class="tr-block"><span class="tr-num" id="tr-m">00</span><span class="tr-unit">minutes</span></div>
-      <span class="tr-sep">:</span>
-      <div class="tr-block"><span class="tr-num" id="tr-s">00</span><span class="tr-unit">secondes</span></div>
-    </div>
-    <a href="#offre" id="timer-cta-recode">J'en profite</a>
-  </div>
   <header class="nav">
     <div class="nav-inner">
       <a class="brand-logo" href="#" aria-label="RECODE — the self therapy method">
@@ -1217,30 +1207,6 @@ if(range){
   frame(0);
 })();
 
-// countdown bar: resets daily at midnight
-(function(){
-  const hEl = document.getElementById('tr-h');
-  const mEl = document.getElementById('tr-m');
-  const sEl = document.getElementById('tr-s');
-  if(!hEl || !mEl || !sEl) return;
-  const pad = n => String(n).padStart(2,'0');
-  function bump(el){ el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
-  function tick(){
-    const now = new Date();
-    const midnight = new Date();
-    midnight.setHours(24,0,0,0);
-    let diff = Math.floor((midnight - now)/1000);
-    if(diff < 0) diff = 0;
-    const h = Math.floor(diff/3600);
-    const m = Math.floor((diff%3600)/60);
-    const s = diff%60;
-    if(hEl.textContent !== pad(h)){ hEl.textContent = pad(h); if(!REDUCED) bump(hEl); }
-    if(mEl.textContent !== pad(m)){ mEl.textContent = pad(m); if(!REDUCED) bump(mEl); }
-    if(sEl.textContent !== pad(s)){ sEl.textContent = pad(s); if(!REDUCED) bump(sEl); }
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
 </script>
 </body>
 </html>
