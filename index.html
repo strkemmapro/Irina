@@ -130,44 +130,6 @@ header.nav{
   border-bottom:1px solid var(--line);
 }
 
-/* ---- Barre compte à rebours ---- */
-#timer-bar-recode{
-  background:var(--wine); color:#EDECE9;
-  padding:11px 20px; text-align:center;
-  font-family:'Poppins',sans-serif; font-size:14px; letter-spacing:.04em;
-  display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap;
-  position:relative; overflow:hidden;
-  border-bottom:1px solid rgba(237,236,233,.16);
-}
-#timer-label-recode{
-  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
-  color:#EDECE9; font-weight:600;
-}
-#timer-digits-recode{display:flex; align-items:center; gap:6px;}
-.tr-block{display:flex; flex-direction:column; align-items:center; min-width:46px;}
-.tr-num{
-  font-family:'Bebas Neue','Playfair Display',sans-serif; font-size:28px; line-height:1;
-  color:#F8F8F8; letter-spacing:.05em; transition:transform .15s ease;
-}
-.tr-num.bump{transform:scale(1.2);}
-.tr-unit{
-  font-size:9px; letter-spacing:.12em; text-transform:uppercase;
-  color:rgba(237,236,233,.62); margin-top:3px; font-family:'Poppins',sans-serif;
-}
-.tr-sep{font-family:'Bebas Neue',sans-serif; font-size:24px; color:rgba(248,248,248,.75); margin-bottom:12px; user-select:none;}
-#timer-cta-recode{
-  font-weight:600; font-size:12px; color:var(--wine); background-color:#EDECE9;
-  padding:.6em 1.2em; border-radius:100px; text-decoration:none; letter-spacing:.06em;
-  text-transform:uppercase; white-space:nowrap; font-family:'Poppins',sans-serif;
-  transition:transform .3s cubic-bezier(.16,1,.3,1), background .3s;
-}
-#timer-cta-recode:hover{transform:translateY(-1px); background:#FFFFFF;}
-@media (max-width:520px){
-  #timer-bar-recode{gap:10px; padding:9px 12px;}
-  .tr-num{font-size:22px;}
-  .tr-block{min-width:38px;}
-  #timer-label-recode{display:none;}
-}
 .nav-inner{max-width:1120px; margin:0 auto; padding:18px clamp(20px,5vw,64px); display:flex; align-items:center; justify-content:space-between; gap:16px;}
 .nav-cta{
   font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
