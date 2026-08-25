@@ -332,16 +332,27 @@ input[type=range].compare-range{
   margin-top:2.6rem;
   display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.3rem;
 }
+.module-intro{margin-top:2.4rem; text-align:center;}
+.module-intro .mi-eyebrow{font-family:'Poppins',sans-serif; font-weight:600; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-soft);}
+.module-intro p{margin:.7rem auto 0; max-width:56ch; color:rgba(236,231,226,.78); font-size:.98rem;}
+.module-grid{grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:1.4rem;}
 .module-card{
-  background:#1A0304; border:1px solid rgba(236,231,226,.16); border-radius:var(--radius-m); overflow:hidden;
+  background:var(--paper-soft); border:1px solid var(--blush-line); border-radius:var(--radius-m); overflow:hidden;
   display:flex; flex-direction:column;
-  transition:transform .4s cubic-bezier(.16,1,.3,1), border-color .4s;
+  box-shadow:0 22px 46px -30px rgba(0,0,0,.6);
+  transition:transform .4s cubic-bezier(.16,1,.3,1), border-color .4s, box-shadow .4s;
 }
-.module-card:hover{transform:translateY(-4px); border-color:rgba(236,231,226,.34);}
+.module-card:hover{transform:translateY(-6px); border-color:var(--wine); box-shadow:0 36px 62px -30px rgba(0,0,0,.65);}
 .module-card img{width:100%; aspect-ratio:1080/800; object-fit:cover; display:block;}
-.module-card .m-body{padding:1.4rem 1.5rem 1.6rem;}
-.module-card .m-title{display:block; font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:1.15rem; color:#F6F1EC; margin-bottom:.6rem;}
-.module-card .m-desc{color:rgba(236,231,226,.78); font-size:.88rem; line-height:1.62;}
+.module-card .m-body{padding:1.5rem 1.6rem 1.7rem; display:flex; flex-direction:column; gap:.65rem;}
+.module-card .m-title{display:block; font-family:'Playfair Display',serif; font-style:italic; font-weight:700; font-size:1.3rem; color:var(--wine); line-height:1.15;}
+.module-card .m-goal{font-family:'Poppins',sans-serif; font-weight:600; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); margin-top:-.15rem;}
+.module-card .m-desc{color:var(--ink-soft); font-size:.92rem; line-height:1.6;}
+.module-card .m-includes{margin-top:.35rem; border-top:1px solid var(--line); padding-top:.95rem;}
+.module-card .m-inc-label{display:block; font-family:'Poppins',sans-serif; font-weight:600; font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:.55rem;}
+.module-card .m-includes ul{list-style:none; margin:0; padding:0; display:grid; gap:.45rem;}
+.module-card .m-includes li{position:relative; padding-left:1.5em; font-size:.86rem; color:var(--ink); line-height:1.45;}
+.module-card .m-includes li::before{content:"\2713"; position:absolute; left:0; top:.05em; color:var(--wine); font-weight:700; font-size:.82em;}
 
 .bonus-heading{
   margin-top:3.2rem; padding-top:2rem; border-top:1px solid rgba(236,231,226,.14);
@@ -801,36 +812,112 @@ h2.ttl.reveal.in::after, .reveal.in h2.ttl::after{transform:scaleX(1);}
     <div class="offer-banner reveal d1">
       <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69d9173644dc68.14047889_Designsanstitre19.png" alt="Aperçu du programme Recode : vidéos, ebooks, lives, communauté">
     </div>
+    <div class="module-intro reveal d2">
+      <span class="mi-eyebrow">La méthode R.E.C.O.D.E.</span>
+      <p>6 modules qui s'enchaînent dans l'ordre, de la régulation du corps jusqu'à la confiance durable. Chaque étape est guidée, avec des exercices concrets — tu sais toujours quoi faire.</p>
+    </div>
     <div class="module-grid">
       <div class="module-card reveal">
         <span class="m-badge"><b>R</b><span>01</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module R — Réguler">
-        <div class="m-body"><span class="m-title">R — Réguler</span><span class="m-desc">Tu apaises ton système nerveux saturé et tu sors du mode survie. Auto-diagnostic de départ, compréhension des 4F, cohérence cardiaque et EFT guidé.</span></div>
+        <div class="m-body">
+          <span class="m-title">R — Réguler</span>
+          <span class="m-goal">Sortir du mode survie</span>
+          <p class="m-desc">Tu apaises ton système nerveux saturé pour que le changement redevienne possible — un cerveau en alerte ne peut pas se transformer.</p>
+          <div class="m-includes">
+            <span class="m-inc-label">Au programme</span>
+            <ul>
+              <li>Auto-diagnostic de départ</li>
+              <li>Les 4 réponses de survie (les 4F)</li>
+              <li>Cohérence cardiaque + EFT guidé</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="module-card reveal">
         <span class="m-badge"><b>E</b><span>02</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf384c4da1.09241667_2.png" alt="Module E — Explorer">
-        <div class="m-body"><span class="m-title">E — Explorer</span><span class="m-desc">Tu remontes aux schémas qui se répètent, dans ton couple, ton travail, l'image que tu as de toi. Une cartographie de ce qui tourne en boucle.</span></div>
+        <div class="m-body">
+          <span class="m-title">E — Explorer</span>
+          <span class="m-goal">Voir ce qui se répète</span>
+          <p class="m-desc">Tu remontes aux schémas inconscients qui reviennent en boucle — dans ton couple, ton travail, l'image que tu as de toi.</p>
+          <div class="m-includes">
+            <span class="m-inc-label">Au programme</span>
+            <ul>
+              <li>Cartographie de tes schémas</li>
+              <li>Tes déclencheurs et automatismes</li>
+              <li>Session EFT dédiée</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="module-card reveal">
         <span class="m-badge"><b>C</b><span>03</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf5636c9c5.37809630_3.png" alt="Module C — Connecter">
-        <div class="m-body"><span class="m-title">C — Connecter</span><span class="m-desc">Tu relies enfin ce que tu ressens à ce que vit ton corps, avec la méthode ARC. Ce qui se jouait en silence devient concret.</span></div>
+        <div class="m-body">
+          <span class="m-title">C — Connecter</span>
+          <span class="m-goal">Réconcilier ta tête et ton corps</span>
+          <p class="m-desc">Tu apprends à accueillir tes émotions au lieu de les fuir, avec la méthode ARC, et tu poses tes premières limites.</p>
+          <div class="m-includes">
+            <span class="m-inc-label">Au programme</span>
+            <ul>
+              <li>La méthode ARC</li>
+              <li>Poser tes premières limites</li>
+              <li>Session EFT</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="module-card reveal">
         <span class="m-badge"><b>O</b><span>04</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf69165596.56922299_4.png" alt="Module O — Ouvrir">
-        <div class="m-body"><span class="m-title">O — Ouvrir</span><span class="m-desc">Tu identifies les croyances qui filtrent tout ce que tu vois de toi, et tu les reprogrammes à la racine.</span></div>
+        <div class="m-body">
+          <span class="m-title">O — Ouvrir</span>
+          <span class="m-goal">Changer de regard sur toi</span>
+          <p class="m-desc">Tu identifies les croyances qui filtrent tout ce que tu vois de toi, et tu reprogrammes ton filtre attentionnel, le SAR.</p>
+          <div class="m-includes">
+            <span class="m-inc-label">Au programme</span>
+            <ul>
+              <li>Repérer tes croyances limitantes</li>
+              <li>Reprogrammer le filtre SAR</li>
+              <li>Gratitude &amp; EFT</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="module-card reveal">
         <span class="m-badge"><b>D</b><span>05</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf77ef1257.43605979_5.png" alt="Module D — Décider">
-        <div class="m-body"><span class="m-title">D — Décider</span><span class="m-desc">Tu sors de la discipline forcée. Un système personnel de constance remplace la boucle motivation puis abandon.</span></div>
+        <div class="m-body">
+          <span class="m-title">D — Décider</span>
+          <span class="m-goal">Tenir dans la durée</span>
+          <p class="m-desc">Tu remplaces la discipline forcée par un système personnel de constance, et tu recalibres ta dopamine.</p>
+          <div class="m-includes">
+            <span class="m-inc-label">Au programme</span>
+            <ul>
+              <li>Discipline douce, pas militaire</li>
+              <li>Recalibrage de la dopamine</li>
+              <li>Ton système d'organisation + EFT</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="module-card reveal">
         <span class="m-badge"><b>E</b><span>06</span></span>
         <img src="https://d1yei2z3i6k35z.cloudfront.net/9005358/69dbbf1cedddf4.00656279_1.png" alt="Module E — Évoluer">
-        <div class="m-body"><span class="m-title">E — Évoluer</span><span class="m-desc">Une estime de toi qui ne dépend plus de ce que tu montres, mais de ce que tu incarnes. Elle reste, même les jours difficiles.</span></div>
+        <div class="m-body">
+          <span class="m-title">E — Évoluer</span>
+          <span class="m-goal">Une confiance qui reste</span>
+          <p class="m-desc">Shadow work pour réconcilier tes parties intérieures et ancrer une estime qui ne dépend plus du regard des autres.</p>
+          <div class="m-includes">
+            <span class="m-inc-label">Au programme</span>
+            <ul>
+              <li>Shadow work</li>
+              <li>Des limites depuis tes valeurs</li>
+              <li>EFT « femme puissante »</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <p class="bonus-heading reveal d3"><span class="n">9</span> Bonus offerts</p>
