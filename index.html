@@ -197,8 +197,8 @@ header.nav{
   display:flex; align-items:center; justify-content:center; text-align:center;
   transition:border-radius .8s ease;
 }
-@media (max-width:900px){.hero-photo{border-radius:var(--radius-m);}}
-.hero-photo img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block;}
+@media (max-width:900px){.hero-photo{border-radius:var(--radius-m); height:auto; aspect-ratio:4/3; max-height:68vh;}}
+.hero-photo img{width:100%; height:100%; object-fit:cover; object-position:center; display:block;}
 .hero-photo .placeholder-label{
   font-family:'Poppins',sans-serif; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
   color:var(--ink-faint); border:1px dashed var(--blush-line); border-radius:var(--radius-s);
@@ -1161,17 +1161,22 @@ els.forEach(el=>io.observe(el));
   nums.forEach(n=>cio.observe(n));
 })();
 
-// parallaxe légère de la photo hero
+// parallaxe légère de la photo hero (desktop uniquement)
 (function(){
   const img = document.querySelector('.hero-photo img');
   if(!img || REDUCED) return;
   let ticking = false;
   function update(){
-    const y = window.scrollY;
-    if(y < window.innerHeight){ img.style.transform = 'translateY(' + (y * 0.08) + 'px) scale(1.04)'; }
     ticking = false;
+    if(window.innerWidth <= 900){ img.style.transform = ''; return; }
+    const y = window.scrollY;
+    if(y < window.innerHeight){
+      const shift = Math.min(y * 0.05, 22);
+      img.style.transform = 'translateY(' + shift + 'px) scale(1.08)';
+    }
   }
   window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
+  window.addEventListener('resize', ()=>{ if(!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
   update();
 })();
 
